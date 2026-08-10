@@ -7,8 +7,8 @@
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://dyrtony0505.github.io/token-cloud-capability-center-2026/" />
     <title>Token 云服务能力中心</title>
-    <script type="module" crossorigin src="/token-cloud-capability-center-2026/assets/index-ByASnkKq.js"></script>
-    <link rel="stylesheet" crossorigin href="/token-cloud-capability-center-2026/assets/index-CuqnH-eq.css">
+    <script type="module" crossorigin src="/token-cloud-capability-center-2026/assets/index-DXazMxrh.js"></script>
+    <link rel="stylesheet" crossorigin href="/token-cloud-capability-center-2026/assets/index-CU4BOx4R.css">
   </head>
   <body>
     <header class="site-header" data-header>
@@ -122,9 +122,9 @@
             <table class="comparison-table infra-table">
               <thead><tr><th>芯片类型</th><th>计算特点</th><th>典型工作负载</th><th>国产适配与验证边界</th></tr></thead>
               <tbody>
-                <tr><th>CPU</th><td>通用指令与复杂控制能力强，承担系统控制面、数据预处理，也可运行轻量模型。</td><td>任务调度、数据处理、检索服务、轻量推理以及 GPU/NPU 主机侧协同。</td><td>可关注鲲鹏、飞腾、龙芯等方向；必须核对指令集、操作系统、编译器和框架兼容清单。</td></tr>
+                <tr><th>CPU</th><td>通用指令与复杂控制能力强，承担系统控制面、数据预处理，也可运行轻量模型。</td><td>任务调度、数据处理、检索服务、轻量推理以及 GPU/NPU 主机侧协同。</td><td>核对指令集、操作系统、编译器、框架、虚拟化能力和整机兼容清单。</td></tr>
                 <tr><th>GPU</th><td>擅长高并行浮点与张量计算，软件生态和通用性较强，但训练、推理能力取决于型号与软件栈。</td><td>大模型训练、微调、在线或批量推理、科学计算和图形计算。</td><td>国产方案处于持续演进阶段；不能只按峰值算力判断，应实测算子覆盖、互联、显存和稳定性。</td></tr>
-                <tr><th>NPU</th><td>面向神经网络计算优化，通常强调能效与专用算子；并非天然只适合推理。</td><td>训练或推理、云边端协同、视觉与语言模型服务，能力以具体产品和框架为准。</td><td>以昇腾等产品线为代表；重点验证模型转换、算子支持、精度保持、工具链和集群能力。</td></tr>
+                <tr><th>NPU</th><td>面向神经网络计算优化，通常强调能效与专用算子；并非天然只适合推理。</td><td>训练或推理、云边端协同、视觉与语言模型服务，能力以具体产品和框架为准。</td><td>重点验证模型转换、算子支持、精度保持、工具链、互联和集群能力。</td></tr>
                 <tr><th>FPGA</th><td>逻辑可重构，可按数据路径和时延目标定制，开发与维护门槛较高。</td><td>特定算子、流式数据处理、低时延链路、协议卸载和行业专用加速。</td><td>国内外均有方案，生态相对专用；需把开发工具、IP 核、时序、功耗和长期维护纳入验收。</td></tr>
               </tbody>
             </table>
@@ -178,40 +178,48 @@
               </tbody>
             </table>
           </div>
-          <div class="detail-heading"><span>BUILD PATH</span><b>从需求澄清到规模运营</b></div>
-          <ol class="build-path" aria-label="建议建设路径">
-            <li><span>01</span><div><b>业务与边界澄清</b><p>确定业务任务、数据等级、部署位置、并发峰值、恢复目标和责任边界。</p></div></li>
-            <li><span>02</span><div><b>同口径验证</b><p>固定模型、精度、硬件、输入输出长度和并发，比较质量、速度、稳定性与成本。</p></div></li>
-            <li><span>03</span><div><b>试点上线</b><p>接入网关、权限、审计、计量和告警，以真实业务流量验证限流、降级与恢复。</p></div></li>
-            <li><span>04</span><div><b>规模运营</b><p>持续进行容量预测、版本治理、账单复核、SLA 复盘和优化前后同口径复测。</p></div></li>
-          </ol>
-          <div class="detail-heading"><span>OPTIMIZATION PATH</span><b>五步技术优化闭环，与项目交付四步各自负责</b></div>
-          <ol class="technical-path" aria-label="技术优化路径">
-            <li><span>01</span><b>统一口径</b><p>固定模型、精度、硬件、输入输出长度、并发和错误率约束。</p></li>
-            <li><span>02</span><b>建立基线</b><p>记录性能、质量、资源、能耗、成本和稳定性初始值。</p></li>
-            <li><span>03</span><b>迭代优化</b><p>逐项验证量化、算子、批处理、KV Cache 和调度策略。</p></li>
-            <li><span>04</span><b>全链路观测</b><p>贯通资源、推理、接口、任务、计量、日志与告警。</p></li>
-            <li><span>05</span><b>安全与容灾</b><p>完善权限、审计、SLA、故障隔离、切换和恢复演练。</p></li>
-          </ol>
+          <div class="path-relation" aria-label="三类路径关系">
+            <div><span>平台组成</span><b>生产架构</b><small>训练 → 推理 → 服务 → 运营</small></div>
+            <i data-lucide="arrow-right"></i>
+            <div><span>项目落地</span><b>交付生命周期</b><small>边界 → 基线 → 试点 → 规模</small></div>
+            <i data-lucide="arrow-right"></i>
+            <div><span>持续改进</span><b>技术优化循环</b><small>观测 → 定位 → 优化 → 复测 → 回归</small></div>
+          </div>
 
-          <div class="detail-heading"><span>PRODUCTION LOOP</span><b>训练形成模型，推理生产 Token，服务体系完成规模化交付</b></div>
-          <div class="production-flow" aria-label="Token 生产闭环">
+          <div class="detail-heading"><span>PRODUCTION ARCHITECTURE</span><b>平台由四个连续能力域组成，不是项目实施步骤</b></div>
+          <div class="production-flow" aria-label="Token 生产架构">
             <div><span>01</span><b>训练工厂</b><small>数据与模型开发</small></div><i data-lucide="arrow-right"></i>
             <div><span>02</span><b>推理工厂</b><small>模型转化为 Token</small></div><i data-lucide="arrow-right"></i>
             <div><span>03</span><b>Token 服务</b><small>接入、治理与计量</small></div><i data-lucide="arrow-right"></i>
             <div><span>04</span><b>持续运营</b><small>观测、复测与优化</small></div>
           </div>
 
+          <div class="detail-heading"><span>PROJECT DELIVERY</span><b>项目交付四阶段：定义基线并把平台落到业务</b></div>
+          <ol class="build-path" aria-label="项目交付生命周期">
+            <li><span>01</span><div><b>业务与边界澄清</b><p>确定业务任务、数据等级、部署位置、并发峰值、恢复目标和责任边界。</p></div></li>
+            <li><span>02</span><div><b>基线验收</b><p>固定模型、精度、硬件、输入输出长度、并发和错误率约束，形成唯一对比基线。</p></div></li>
+            <li><span>03</span><div><b>试点上线</b><p>接入网关、权限、审计、计量和告警，以真实业务流量验证限流、降级与恢复。</p></div></li>
+            <li><span>04</span><div><b>规模运营</b><p>持续进行容量预测、版本治理、账单复核和 SLA 复盘；技术优化统一引用阶段二基线。</p></div></li>
+          </ol>
+          <div class="detail-heading"><span>OPTIMIZATION LOOP</span><b>技术优化五步循环：始终引用已验收基线</b></div>
+          <ol class="technical-path" aria-label="技术优化循环">
+            <li><span>01</span><b>基线观测</b><p>从阶段二基线读取性能、质量、资源、能耗、成本和稳定性数据。</p></li>
+            <li><span>02</span><b>定位瓶颈</b><p>贯通资源、推理、接口、任务、计量、日志与告警，确认主导因素。</p></li>
+            <li><span>03</span><b>单变量优化</b><p>逐项验证量化、算子、批处理、KV Cache 和调度策略，控制变量。</p></li>
+            <li><span>04</span><b>同口径复测</b><p>沿用基线条件比较收益、质量损失、错误率和成本变化。</p></li>
+            <li><span>05</span><b>安全容灾回归</b><p>复核权限、审计、SLA、故障隔离、切换和恢复演练。</p></li>
+          </ol>
+
           <div class="subsection-heading"><span>01 / TRAINING FACTORY</span><h3>训练工厂：覆盖模型训练全流程</h3><p>系统能力定义资源和平台，工程能力负责框架适配、恢复、评测和上线基线。</p></div>
           <div class="comparison-table-wrap">
             <table class="comparison-table capability-table training-table">
-              <thead><tr><th>能力模块</th><th>核心能力</th><th>实现方式</th><th>交付价值</th><th>能力属性</th></tr></thead>
+              <thead><tr><th>能力模块</th><th>核心能力</th><th>实现方式</th><th>交付价值</th><th>交付主责</th></tr></thead>
               <tbody>
-                <tr><th>弹性训练集群</th><td>按任务扩缩容与资源隔离</td><td>分布式调度、队列和配额管理</td><td>提高资源利用效率</td><td><span class="ability-tag system">系统</span><span class="ability-tag engineering">工程</span></td></tr>
-                <tr><th>独享训练集群</th><td>专属资源池或物理资源独享</td><td>专属集群、权限和网络隔离</td><td>满足稳定性与安全边界</td><td><span class="ability-tag system">系统</span></td></tr>
-                <tr><th>训练与微调</th><td>全参数、增量、LoRA / QLoRA</td><td>框架适配、断点续训与故障恢复</td><td>缩短模型迭代周期</td><td><span class="ability-tag engineering">工程</span></td></tr>
-                <tr><th>强化学习</th><td>数据、训练与评测协同</td><td>任务编排、过程监控与效果评估</td><td>支撑复杂模型优化</td><td><span class="ability-tag system">系统</span><span class="ability-tag engineering">工程</span></td></tr>
-                <tr><th>一体化工具链</th><td>数据、训练、评测和部署</td><td>标准流程与全链路可观测</td><td>降低交付和运维复杂度</td><td><span class="ability-tag system">系统</span><span class="ability-tag engineering">工程</span></td></tr>
+                <tr><th>弹性训练集群</th><td>按任务扩缩容与资源隔离</td><td>分布式调度、队列和配额管理</td><td>提高资源利用效率</td><td><span class="ability-tag cooperative">协同交付</span></td></tr>
+                <tr><th>独享训练集群</th><td>专属资源池或物理资源独享</td><td>专属集群、权限和网络隔离</td><td>满足稳定性与安全边界</td><td><span class="ability-tag system">系统主责</span></td></tr>
+                <tr><th>训练与微调</th><td>全参数、增量、LoRA / QLoRA</td><td>框架适配、断点续训与故障恢复</td><td>缩短模型迭代周期</td><td><span class="ability-tag engineering">工程主责</span></td></tr>
+                <tr><th>强化学习</th><td>数据、训练与评测协同</td><td>任务编排、过程监控与效果评估</td><td>支撑复杂模型优化</td><td><span class="ability-tag engineering">工程主责</span></td></tr>
+                <tr><th>一体化工具链</th><td>数据、训练、评测和部署</td><td>标准流程与全链路可观测</td><td>降低交付和运维复杂度</td><td><span class="ability-tag cooperative">协同交付</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -259,25 +267,19 @@
             <h2>同一种 Token，不同的业务约束</h2>
             <p>以业务任务而非泛行业标签组织内容，覆盖八个具备明确评价口径的重点方向。</p>
           </header>
-          <div class="industry-toolbar">
-            <div class="segmented compact" role="group" aria-label="行业范围">
-              <button type="button" data-industry-filter="fixed">核心六项</button>
-              <button class="active" type="button" data-industry-filter="all">八大重点</button>
-            </div>
-            <span class="table-count" data-industry-count></span>
-          </div>
+          <div class="industry-toolbar"><p>八个重点行业统一展示，不再区分“固定”与“扩展”。</p><span class="table-count" data-industry-count>8 个行业</span></div>
           <div class="industry-table-wrap">
             <table class="industry-table">
-              <thead><tr><th>名称</th><th>计算方式 / 关键指标</th><th>侧重点 / 相对低优先级</th><th>行业标准 / 依据</th><th><span class="sr-only">详情</span></th></tr></thead>
+              <thead><tr><th>名称</th><th>计算指标与项目口径</th><th>侧重点 / 相对低优先级</th><th>适用依据 / 用途 / 状态</th><th><span class="sr-only">详情</span></th></tr></thead>
               <tbody data-industry-body>
-                <tr><td data-label="名称"><span class="industry-name">低空经济</span><small>固定</small></td><td data-label="计算方式 / 关键指标">mAP、MOTA / IDF1、定位误差、告警时延、链路可用性</td><td data-label="侧重点 / 相对低优先级">重点：实时性、安全冗余、弱网和多传感器融合。相对低优先级：离线大批量吞吐和极致单位成本。</td><td data-label="行业标准 / 依据">民航局相关规章；GB 42590-2023</td><td><button class="icon-button detail-button" type="button" aria-label="查看低空经济详情" data-industry-id="low-altitude">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">具身智能</span><small>固定</small></td><td data-label="计算方式 / 关键指标">任务成功率、碰撞率、轨迹误差、端到端时延、恢复成功率</td><td data-label="侧重点 / 相对低优先级">重点：感知—规划—控制闭环、动作安全和恢复。相对低优先级：脱离任务质量的峰值吞吐。</td><td data-label="行业标准 / 依据">ISO 10218-1/-2:2025；ISO/TS 15066</td><td><button class="icon-button detail-button" type="button" aria-label="查看具身智能详情" data-industry-id="embodied">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">GIS / 测绘</span><small>固定</small></td><td data-label="计算方式 / 关键指标">IoU、mAP、配准误差、拓扑错误率、P95 时延、空间查询吞吐</td><td data-label="侧重点 / 相对低优先级">重点：识别精度、坐标一致性和快速检索。相对低优先级：非实时成果生产中的毫秒级首 Token。</td><td data-label="行业标准 / 依据">OGC API Features / WMS / WFS；GB/T 17798-2007</td><td><button class="icon-button detail-button" type="button" aria-label="查看GIS / 测绘详情" data-industry-id="gis">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">医疗影像</span><small>固定</small></td><td data-label="计算方式 / 关键指标">灵敏度、特异度、AUROC、F1、漏诊率、误诊率、报告时延</td><td data-label="侧重点 / 相对低优先级">重点：诊断精度、漏诊风险、追溯和医生复核。相对低优先级：满足临床时限后的极限生成速度。</td><td data-label="行业标准 / 依据">ISO 13485；IEC 62304；GB/T 39725-2020</td><td><button class="icon-button detail-button" type="button" aria-label="查看医疗影像详情" data-industry-id="medical">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">金融风控</span><small>固定</small></td><td data-label="计算方式 / 关键指标">AUC / KS、召回率、误报率、损失率、审计追溯时延</td><td data-label="侧重点 / 相对低优先级">重点：风险识别、稳定性、合规和审计。相对低优先级：单次输出长度和生成文风。</td><td data-label="行业标准 / 依据">JR/T 0223-2021；JR/T 0197-2020</td><td><button class="icon-button detail-button" type="button" aria-label="查看金融风控详情" data-industry-id="finance">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">工业制造</span><small>固定</small></td><td data-label="计算方式 / 关键指标">良率、缺陷检出率、漏检率、节拍、OEE、停机时长</td><td data-label="侧重点 / 相对低优先级">重点：确定性、设备协议、工艺安全和连续运行。相对低优先级：通用对话体验。</td><td data-label="行业标准 / 依据">IEC 61508；IEC 62443；GB/T 37393-2019</td><td><button class="icon-button detail-button" type="button" aria-label="查看工业制造详情" data-industry-id="industry">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">能源电力</span><small class="optional">扩展</small></td><td data-label="计算方式 / 关键指标">负荷预测 MAE、故障召回率、告警时延、供电可用性、调度约束满足率</td><td data-label="侧重点 / 相对低优先级">重点：安全稳定、预测可靠和告警闭环。相对低优先级：界面生成速度。</td><td data-label="行业标准 / 依据">IEC 61850；电力行业数据安全与调度规程</td><td><button class="icon-button detail-button" type="button" aria-label="查看能源电力详情" data-industry-id="energy">详情</button></td></tr>
-                <tr><td data-label="名称"><span class="industry-name">交通物流</span><small class="optional">扩展</small></td><td data-label="计算方式 / 关键指标">ETA MAE / RMSE、履约率、调度耗时、异常识别召回</td><td data-label="侧重点 / 相对低优先级">重点：时空预测、调度、峰值稳定和成本。相对低优先级：复杂生成效果。</td><td data-label="行业标准 / 依据">GB/T 35658-2017</td><td><button class="icon-button detail-button" type="button" aria-label="查看交通物流详情" data-industry-id="logistics">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">低空经济</span></td><td data-label="计算指标与项目口径">mAP、MOTA / IDF1、定位误差、告警时延、链路可用性；阈值按任务风险与运行场景验收。</td><td data-label="侧重点 / 相对低优先级">重点：实时性、安全冗余、弱网和多传感器融合。相对低优先级：离线大批量吞吐和极致单位成本。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>运行监管</b>CCAR-92 <em>已核验现行</em></span><span class="standard-line"><b>飞行管理</b>国令第761号 <em>已核验现行</em></span><span class="standard-line"><b>系统安全</b>GB 42590-2023 <em>已核验现行</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看低空经济详情" data-industry-id="low-altitude">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">具身智能</span></td><td data-label="计算指标与项目口径">任务成功率、碰撞率、轨迹误差、端到端时延、恢复成功率；按任务难度分层。</td><td data-label="侧重点 / 相对低优先级">重点：感知—规划—控制闭环、动作安全和恢复。相对低优先级：脱离任务质量的峰值吞吐。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>机器人安全</b>ISO 10218-1/-2:2025 <em>已核验发布</em></span><span class="standard-line"><b>协作安全</b>ISO/TS 15066:2016 <em class="status-revising">已发布·修订中</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看具身智能详情" data-industry-id="embodied">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">GIS / 测绘</span></td><td data-label="计算指标与项目口径">IoU、mAP、配准误差、拓扑错误率、P95 时延、空间查询吞吐；IoU/mAP 为项目口径。</td><td data-label="侧重点 / 相对低优先级">重点：识别精度、坐标一致性和快速检索。相对低优先级：非实时成果生产中的毫秒级首 Token。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>成果质量</b>GB/T 24356-2023 <em>已核验现行</em></span><span class="standard-line"><b>数据交换</b>GB/T 17798-2007 <em>已核验现行</em></span><span class="standard-line"><b>接口互操作</b>OGC API Features / WMS / WFS <em class="status-pending">版本待确认</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看GIS / 测绘详情" data-industry-id="gis">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">医疗影像</span></td><td data-label="计算指标与项目口径">灵敏度、特异度、AUROC、F1、漏诊率、误诊率、报告时延；阈值按适应证和临床方案确认。</td><td data-label="侧重点 / 相对低优先级">重点：诊断精度、漏诊风险、追溯和医生复核。相对低优先级：满足临床时限后的极限生成速度。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>注册审评</b>人工智能医疗器械注册审查指导原则（2022年第8号） <em>已核验发布</em></span><span class="standard-line"><b>质量与研发</b>ISO 13485 / IEC 62304 <em class="status-pending">适用性待确认</em></span><span class="standard-line"><b>数据安全</b>GB/T 39725-2020 <em class="status-pending">适用性待确认</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看医疗影像详情" data-industry-id="medical">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">金融风控</span></td><td data-label="计算指标与项目口径">AUC / KS、召回率、误报率、损失率、审计追溯时延；按业务、客群和时间窗口分层。</td><td data-label="侧重点 / 相对低优先级">重点：风险识别、稳定性、合规和审计。相对低优先级：单次输出长度和生成文风。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>模型与数据</b>JR/T 0223-2021 / JR/T 0197-2020 <em class="status-pending">适用性待机构确认</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看金融风控详情" data-industry-id="finance">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">工业制造</span></td><td data-label="计算指标与项目口径">良率、缺陷检出率、漏检率、节拍、OEE、停机时长；按产线、产品和缺陷类别分层。</td><td data-label="侧重点 / 相对低优先级">重点：确定性、设备协议、工艺安全和连续运行。相对低优先级：通用对话体验。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>功能/工控安全</b>IEC 61508 / IEC 62443 <em class="status-pending">边界待确认</em></span><span class="standard-line"><b>数字化车间</b>GB/T 37393-2019 <em class="status-pending">适用性待确认</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看工业制造详情" data-industry-id="industry">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">能源电力</span></td><td data-label="计算指标与项目口径">负荷预测 MAE、故障召回率、告警时延、供电可用性、调度约束满足率；预测指标为项目口径。</td><td data-label="侧重点 / 相对低优先级">重点：安全稳定、预测可靠和告警闭环。相对低优先级：界面生成速度。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>监控安全</b>《电力监控系统安全防护规定》（2024年第27号令） <em>已核验现行</em></span><span class="standard-line"><b>通信模型</b>IEC 61850 <em class="status-pending">适用版本待确认</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看能源电力详情" data-industry-id="energy">详情</button></td></tr>
+                <tr><td data-label="名称"><span class="industry-name">交通物流</span></td><td data-label="计算指标与项目口径">ETA MAE / RMSE、履约率、调度耗时、异常识别召回；按路线、时段、天气和订单类型分层。</td><td data-label="侧重点 / 相对低优先级">重点：时空预测、调度、峰值稳定和成本。相对低优先级：复杂生成效果。</td><td data-label="适用依据 / 用途 / 状态"><span class="standard-line"><b>物流信息</b>GB/T 35658-2017 <em class="status-pending">状态与适用性待复核</em></span></td><td><button class="icon-button detail-button" type="button" aria-label="查看交通物流详情" data-industry-id="logistics">详情</button></td></tr>
               </tbody>
             </table>
           </div>
@@ -341,6 +343,25 @@
           <article><span class="source-icon"><i data-lucide="book-open"></i></span><small>B / 官方入口</small><h3>标准与规范核验</h3><p><a href="https://openstd.samr.gov.cn/bzgk/std/" target="_blank" rel="noreferrer">国家标准全文公开系统</a> · <a href="https://www.iso.org/standards.html" target="_blank" rel="noreferrer">ISO</a> · <a href="https://webstore.iec.ch/" target="_blank" rel="noreferrer">IEC</a> · <a href="https://www.ogc.org/standards/" target="_blank" rel="noreferrer">OGC</a></p></article>
           <article><span class="source-icon"><i data-lucide="test-tube"></i></span><small>C / 验证边界</small><h3>实测与合同优先</h3><p>行业建议不能代替产品规格、适配清单、测试记录、监管判断或合同承诺；样本结果不能直接写成生产 SLA。</p></article>
         </div>
+        <div class="section-inner verification-register">
+          <div class="detail-heading"><span>VERIFICATION REGISTER</span><b>关键依据逐项核验，不再使用一句话兜底</b></div>
+          <div class="comparison-table-wrap">
+            <table class="comparison-table verification-table">
+              <thead><tr><th>依据</th><th>用途</th><th>核验状态</th><th>适用边界 / 官方入口</th></tr></thead>
+              <tbody>
+                <tr><th>ISO 10218-1/-2:2025</th><td>工业机器人及应用安全</td><td><span class="verification-status verified">已核验发布</span></td><td><a href="https://www.iso.org/standard/73934.html" target="_blank" rel="noreferrer">ISO 官方页</a>；不规定任务成功率阈值</td></tr>
+                <tr><th>ISO/TS 15066:2016</th><td>协作机器人安全</td><td><span class="verification-status revising">已发布·修订中</span></td><td><a href="https://www.iso.org/standard/62996.html" target="_blank" rel="noreferrer">ISO 官方页</a>；未来由 ISO/AWI 15066-1 替代</td></tr>
+                <tr><th>GB/T 24356-2023</th><td>测绘成果质量检查与验收</td><td><span class="verification-status verified">已核验现行</span></td><td><a href="https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=2874EFAC7523FB293E6AF2E4068CEB02" target="_blank" rel="noreferrer">国家标准全文公开系统</a>；不定义 IoU/mAP</td></tr>
+                <tr><th>GB/T 17798-2007</th><td>地理空间数据交换格式</td><td><span class="verification-status verified">已核验现行</span></td><td>只用于数据交换，不作为识别精度依据</td></tr>
+                <tr><th>人工智能医疗器械注册审查指导原则</th><td>人工智能医疗器械注册审评</td><td><span class="verification-status verified">已核验发布</span></td><td>国家药监局器审中心 2022 年第 8 号；阈值按适应证和临床方案确认</td></tr>
+                <tr><th>CCAR-92</th><td>民用无人驾驶航空器运行安全管理</td><td><span class="verification-status verified">已核验现行</span></td><td><a href="https://www.caac.gov.cn/XXGK/XXGK/MHGZ/202401/t20240103_222566.html" target="_blank" rel="noreferrer">中国民用航空局</a>；不定义视觉算法精度</td></tr>
+                <tr><th>国令第761号</th><td>无人驾驶航空器飞行管理</td><td><span class="verification-status verified">已核验现行</span></td><td>《无人驾驶航空器飞行管理暂行条例》，2024-01-01 起施行</td></tr>
+                <tr><th>国家发展改革委令2024年第27号</th><td>电力监控系统安全防护</td><td><span class="verification-status verified">已核验现行</span></td><td><a href="https://www.ndrc.gov.cn/xxgk/zcfb/fzggwl/202412/t20241211_1394960.html" target="_blank" rel="noreferrer">国家发展改革委</a>；2025-01-01 起施行</td></tr>
+                <tr><th>其他行业标准</th><td>金融、工业、交通等场景约束</td><td><span class="verification-status pending">适用性待确认</span></td><td>进入具体项目后按机构、设备、业务和标准版本逐项复核</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div class="section-inner verified-strip">
           <span><i data-lucide="badge-check"></i> 官方入口已列出，具体标准逐项按业务复核</span>
           <span><i data-lucide="calendar-clock"></i> 页面内容复核日期：2026-08-10</span>
@@ -351,7 +372,7 @@
 
     <footer>
       <div><b>Token 云服务能力中心</b><span>系统 × 工程</span></div>
-      <p>第二版内容原型 · 事实、标准与产品能力持续核验</p>
+      <p>第三版真实性修订 · 指标口径、标准用途与核验状态分层展示</p>
     </footer>
 
     <dialog class="industry-dialog" data-industry-dialog>
