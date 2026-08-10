@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dyrtony0505.github.io/token-cloud-capability-center-2026/sitemap.xml
