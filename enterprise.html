@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="智能系统与工程能力中心企业服务填报预览。" />
+    <meta name="build-version" content="3.0.0-preview" />
+    <title>企业服务｜智能系统与工程能力中心</title>
+    <script type="module" crossorigin src="./assets/enterprise-bNqb3o1-.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="./assets/portal-BPl5YxEO.css">
+  </head>
+  <body>
+    <header class="portal-header">
+      <a class="portal-brand" href="./index.html"><b>SE</b><span><b>智能系统与工程</b><small>能力中心</small></span></a>
+      <nav class="portal-nav"><a href="./index.html">公开能力</a><a href="./standards.html">标准制定</a><a href="./enterprise.html" aria-current="page">企业服务</a></nav>
+    </header>
+    <main>
+      <section class="invite-panel" data-invite-panel>
+        <p class="portal-kicker">07 / ENTERPRISE SERVICE</p><h2>企业验证项目入口</h2>
+        <p>企业通过邀请码进入独立填报工作台。当前为前端流程预览，数据只保存在本机浏览器，不会建立真实账号或上传企业资料。</p>
+        <form class="invite-form" data-invite-form><input name="invite" aria-label="邀请码" placeholder="请输入邀请码" autocomplete="off" /><button type="submit">进入工作台</button></form>
+        <p class="demo-hint">演示邀请码：SE2026</p><div class="error-text" data-invite-error aria-live="polite"></div>
+      </section>
+      <section class="form-workspace" data-workspace hidden>
+        <div class="enterprise-shell">
+          <aside class="enterprise-sidebar"><h1>企业填报</h1><p>项目数据按步骤填写，修改后每5秒保存一次。</p><ol class="step-list"><li><span>01</span>基本信息</li><li><span>02</span>测试环境</li><li><span>03</span>Token产能与时延</li><li><span>04</span>稳定性与能效</li><li><span>05</span>汇总与报告</li></ol></aside>
+          <div class="enterprise-content">
+            <header class="workspace-top"><div><p class="portal-kicker">ENTERPRISE WORKSPACE</p><h2>能力验证项目填报</h2><p>当前草稿仅存于本机；正式版将接入企业隔离、审核与云端续填。</p></div><div class="save-state" data-save-state>尚未修改</div></header>
+            <form data-enterprise-form>
+              <section class="form-section"><header><span>STEP 01</span><h3>企业与项目基本信息</h3><p>用于建立项目归属和报告基础信息。</p></header><div class="field-grid"><div class="field"><label for="company">企业名称</label><input id="company" name="company" /></div><div class="field"><label for="project">项目名称</label><input id="project" name="project" /></div><div class="field"><label for="product">产品或服务名称</label><input id="product" name="product" /></div><div class="field"><label for="version">型号与版本</label><input id="version" name="version" /></div></div></section>
+              <section class="form-section"><header><span>STEP 02</span><h3>软硬件与测试环境</h3><p>测试结论只对声明的环境和口径负责。</p></header><div class="field-grid"><div class="field"><label for="hardware">计算硬件</label><input id="hardware" name="hardware" placeholder="CPU / GPU / NPU、数量与显存" /></div><div class="field"><label for="model">模型与精度</label><input id="model" name="model" placeholder="模型、版本、精度" /></div><div class="field"><label for="software">软件环境</label><input id="software" name="software" placeholder="系统、驱动、框架、推理引擎" /></div><div class="field"><label for="network">网络与部署</label><input id="network" name="network" placeholder="公有云 / 专有云、网络条件" /></div></div></section>
+              <section class="form-section"><header><span>STEP 03</span><h3>Token产能与响应体验</h3><p>记录测试条件、结果与异常，不把单次样本直接写成生产SLA。</p></header><div class="field-grid"><div class="field"><label for="throughput">输出吞吐（token/s）</label><input id="throughput" name="throughput" inputmode="decimal" /></div><div class="field"><label for="ttft">TTFT P95（ms）</label><input id="ttft" name="ttft" inputmode="decimal" /></div><div class="field"><label for="tpot">TPOT（ms/token）</label><input id="tpot" name="tpot" inputmode="decimal" /></div><div class="field"><label for="success">调用成功率（%）</label><input id="success" name="success" inputmode="decimal" /></div><div class="field full"><label for="conditions">测试条件与计算说明</label><textarea id="conditions" name="conditions"></textarea></div></div></section>
+              <section class="form-section"><header><span>STEP 04</span><h3>承载能力、稳定性与能效</h3><p>填写持续运行、故障恢复、资源利用和能耗情况。</p></header><div class="field-grid"><div class="field"><label for="concurrency">稳定并发数</label><input id="concurrency" name="concurrency" inputmode="numeric" /></div><div class="field"><label for="availability">服务可用性（%）</label><input id="availability" name="availability" inputmode="decimal" /></div><div class="field"><label for="recovery">故障恢复时长（min）</label><input id="recovery" name="recovery" inputmode="decimal" /></div><div class="field"><label for="energy">单位Token能耗（J/token）</label><input id="energy" name="energy" inputmode="decimal" /></div><div class="field full"><label for="notes">问题项、日志和补充说明</label><textarea id="notes" name="notes"></textarea></div></div></section>
+            </form>
+            <div class="workspace-actions"><button type="button" data-save-now>立即保存</button><button type="button" class="primary-action" data-generate-report>生成报告预览</button></div>
+            <section class="report-preview" data-report-preview hidden><small>企业自填 · 预览版</small><h2>能力验证项目报告预览</h2><div class="report-grid" data-report-grid></div><p>Word/PDF正式版将在报告模板和字段映射确认后接入。当前可使用浏览器打印功能检查预览版式。</p><button type="button" class="primary-action" data-print-report>打印 / 另存为PDF</button></section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="portal-footer"><span>智能系统与工程能力中心</span><span>V3 前端流程预览 · 2026-08-17</span></footer>
+  </body>
+</html>
