@@ -7,10 +7,11 @@
     <meta name="build-version" content="3.1.2-taier-form" />
     <title>设备检验确认书在线填报｜智能系统与工程能力中心</title>
     <script>document.documentElement.classList.add('access-pending')</script>
-    <script type="module" crossorigin src="./assets/enterprise-Dl9Ka07i.js"></script>
+    <script type="module" crossorigin src="./assets/enterprise-01cABF5R.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/access-DpTLQoBY.js">
+    <link rel="modulepreload" crossorigin href="./assets/jszip.min-DL2cmomj.js">
     <link rel="stylesheet" crossorigin href="./assets/access-DMHtwMoL.css">
-    <link rel="stylesheet" crossorigin href="./assets/portal-Cfm5x7em.css">
+    <link rel="stylesheet" crossorigin href="./assets/portal-C1mO0tL2.css">
   </head>
   <body>
     <header class="portal-header">
@@ -24,6 +25,15 @@
         <p>企业填写送检和产品信息后，系统会按泰尔实验室原确认书版式生成已填写的 Word。当前为前端演示版，数据仅保存在本机浏览器。</p>
         <form class="invite-form" data-invite-form><input name="invite" aria-label="邀请码" placeholder="请输入邀请码" autocomplete="off" required /><button type="submit">进入填报</button></form>
         <p class="demo-hint">演示邀请码：SE2026</p><div class="error-text" data-invite-error aria-live="polite"></div>
+      </section>
+      <section class="project-selector" data-project-selector hidden>
+        <p class="portal-kicker">CERTIFICATION PROJECT</p>
+        <div class="selector-heading"><div><h2>选择认证项目</h2><p>选择本次需要办理的项目。后续新增认证项目将继续在此扩展。</p></div><span>当前开放 1 项</span></div>
+        <article class="certification-project is-available">
+          <div><small>01 / TOKEN FACTORY</small><h3>Token 工厂</h3><p>填写设备检验确认书，继续完成原始记录，并由同一份数据生成原始记录与检验报告。</p></div>
+          <ol><li>设备检验确认书</li><li>原始记录</li><li>检验报告</li></ol>
+          <button type="button" data-select-project="token-factory">选择并继续</button>
+        </article>
       </section>
       <section class="form-workspace" data-workspace hidden>
         <div class="enterprise-shell confirmation-shell">
@@ -41,6 +51,7 @@
                 <div class="field"><label for="producerOrg">生产单位 *</label><div class="field-with-action"><input id="producerOrg" name="producerOrg" required /><button type="button" data-copy-org="producerOrg">同受检单位</button></div></div><div class="field"><label for="entrustedOrg">委托单位 *</label><div class="field-with-action"><input id="entrustedOrg" name="entrustedOrg" required /><button type="button" data-copy-org="entrustedOrg">同受检单位</button></div></div>
                 <div class="field"><label for="origin">产地 *</label><input id="origin" name="origin" required /></div><div class="field"><label for="contactPerson">联系人 *</label><input id="contactPerson" name="contactPerson" autocomplete="name" required /></div><div class="field"><label for="phone">电话 *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div><div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required /></div><div class="field"><label for="businessContact">业务接口人 *</label><input id="businessContact" name="businessContact" required /></div><div class="field full"><label for="address">地址 *</label><textarea id="address" name="address" autocomplete="street-address" required></textarea></div>
                 <div class="field full logo-field"><label for="companyLogo">企业商标 / Logo *</label><div class="logo-upload"><div class="logo-preview" data-logo-preview><span>尚未上传</span></div><div><input id="companyLogo" name="companyLogo" type="file" accept="image/png,image/jpeg" /><p>支持 PNG/JPG，建议白底横版 Logo，不超过5MB。</p><button class="secondary-control" type="button" data-remove-logo hidden>移除 Logo</button></div></div></div>
+                <div class="field full logo-field"><label for="reportCollectorSignature">取报告人签名图片 *</label><div class="logo-upload signature-upload"><div class="logo-preview signature-preview" data-signature-preview><span>尚未上传</span></div><div><input id="reportCollectorSignature" name="reportCollectorSignature" type="file" accept="image/png,image/jpeg" /><p>请上传白底签名图片，系统会等比写入确认书“取报告人”位置。</p><button class="secondary-control" type="button" data-remove-signature hidden>移除签名</button></div></div></div>
               </div></section>
               <section class="form-section" id="product"><header><span>STEP 02</span><h3>产品与样品信息</h3><p>该部分将写入原确认书的产品和送样位置。</p></header><div class="field-grid">
                 <div class="field"><label for="productName">产品名称 *</label><input id="productName" name="productName" required /></div><div class="field"><label for="productModel">产品型号 *</label><input id="productModel" name="productModel" required /></div><div class="field"><label for="sampleQuantity">样品数量 *</label><input id="sampleQuantity" name="sampleQuantity" placeholder="例：1台" required /></div><div class="field"><label for="productionDate">生产日期 *</label><input id="productionDate" name="productionDate" type="date" required /></div><div class="field"><label for="samplingMethod">抽样 / 送样 *</label><select id="samplingMethod" name="samplingMethod" required><option value="">请选择</option><option value="送样">送样</option><option value="抽样">抽样</option></select></div><div class="field"><label for="softwareVersion">软件版本 *</label><input id="softwareVersion" name="softwareVersion" required /></div><div class="field full"><label for="serialModel">产品出厂序号（型号） *</label><input id="serialModel" name="serialModel" required /></div><div class="field"><label for="attachmentNote">附件说明</label><input id="attachmentNote" name="attachmentNote" placeholder="无则留空" /></div><div class="field"><label for="otherNote">其他说明</label><input id="otherNote" name="otherNote" placeholder="无则留空" /></div>
@@ -49,7 +60,7 @@
                 <fieldset class="choice-group"><legend>符合性判定规则 *</legend><label><input type="radio" name="conformityRule" value="1" checked /><span><b>1．不考虑测量不确定度</b><small>直接以测量结果值或平均值作为符合性判定依据。</small></span></label><label><input type="radio" name="conformityRule" value="2" /><span><b>2．考虑测量不确定度，无法判定时统一判定为符合</b></span></label><label><input type="radio" name="conformityRule" value="3" /><span><b>3．考虑测量不确定度，无法判定时统一判定为不符合</b></span></label></fieldset>
                 <fieldset class="choice-group compact-choice"><legend>报告是否仅作为科研、教学或内部质量控制之用 *</legend><label><input type="radio" name="reportUse" value="yes" /><span><b>是</b></span></label><label><input type="radio" name="reportUse" value="no" /><span><b>否</b></span></label><label><input type="radio" name="reportUse" value="na" checked /><span><b>不适用</b></span></label></fieldset>
               </section>
-              <section class="form-section generation-section" id="generate"><header><span>STEP 04</span><h3>确认并生成 Word</h3><p>以下泰尔认证字段在 Word 中保持空白，不由企业填写。</p></header><div class="reserved-fields"><span>任务编号</span><span>检验标准</span><span>检验项目</span><span>完成日期</span><span>预计费用</span><span>取报告日期</span><span>取设备日期</span><span>取报告人</span><span>取设备人</span><span>接收人签字</span></div><label class="accuracy-confirm"><input type="checkbox" name="accuracyConfirm" required /><span>我已核对上述信息，确认内容真实、准确、有效。</span></label><div class="generation-feedback" data-generation-feedback aria-live="polite"></div></section>
+              <section class="form-section generation-section" id="generate"><header><span>STEP 04</span><h3>确认并生成 Word</h3><p>取报告人签名由企业上传；以下泰尔认证字段在 Word 中保持空白。</p></header><div class="reserved-fields"><span>任务编号</span><span>检验标准</span><span>检验项目</span><span>完成日期</span><span>预计费用</span><span>取报告日期</span><span>取设备日期</span><span>取设备人</span><span>委托人签字</span><span>接收人签字</span></div><label class="accuracy-confirm"><input type="checkbox" name="accuracyConfirm" required /><span>我已核对上述信息，确认内容真实、准确、有效。</span></label><div class="generation-feedback" data-generation-feedback aria-live="polite"></div><a class="next-step-action" href="./records.html?project=token-factory" data-next-step hidden>下一步：填写原始记录</a></section>
             </form>
             <div class="workspace-actions"><button type="button" data-save-now>立即保存</button><button type="button" class="primary-action" data-generate-report>生成设备检验确认书</button></div>
           </div>
