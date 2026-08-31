@@ -3,44 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="智能系统与工程能力中心企业服务填报预览。" />
-    <meta name="build-version" content="3.0.0-preview" />
-    <title>企业服务｜智能系统与工程能力中心</title>
+    <meta name="description" content="Token工厂设备检验确认书在线填报与Word生成。" />
+    <meta name="build-version" content="3.1.0-taier-form" />
+    <title>设备检验确认书在线填报｜智能系统与工程能力中心</title>
     <script>document.documentElement.classList.add('access-pending')</script>
-    <script type="module" crossorigin src="./assets/enterprise-CxkKCSvJ.js"></script>
+    <script type="module" crossorigin src="./assets/enterprise-Cgb-oQ3V.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/access-DpTLQoBY.js">
     <link rel="stylesheet" crossorigin href="./assets/access-DMHtwMoL.css">
-    <link rel="stylesheet" crossorigin href="./assets/portal-Cd8Vwrdw.css">
+    <link rel="stylesheet" crossorigin href="./assets/portal-CnIzVY4_.css">
   </head>
   <body>
     <header class="portal-header">
       <a class="portal-brand" href="./index.html"><span><b>智能系统与工程</b><small>能力中心</small></span></a>
-      <nav class="portal-nav"><a href="./index.html">公开能力</a><a href="./standards.html">标准制定</a><a href="./enterprise.html" aria-current="page">企业服务</a></nav>
+      <nav class="portal-nav"><a href="./index.html">公开能力</a><a href="./standards.html">标准制定</a><a href="./enterprise.html" aria-current="page">泰尔认证</a></nav>
     </header>
     <main>
       <section class="invite-panel" data-invite-panel>
-        <p class="portal-kicker">07 / ENTERPRISE SERVICE</p><h2>企业验证项目入口</h2>
-        <p>企业通过邀请码进入独立填报工作台。当前为前端流程预览，数据只保存在本机浏览器，不会建立真实账号或上传企业资料。</p>
-        <form class="invite-form" data-invite-form><input name="invite" aria-label="邀请码" placeholder="请输入邀请码" autocomplete="off" /><button type="submit">进入工作台</button></form>
+        <p class="portal-kicker">07 / TAIER CERTIFICATION</p>
+        <h2>设备检验确认书在线填报</h2>
+        <p>企业填写送检和产品信息后，系统会按泰尔实验室原确认书版式生成已填写的 Word。当前为前端演示版，数据仅保存在本机浏览器。</p>
+        <form class="invite-form" data-invite-form><input name="invite" aria-label="邀请码" placeholder="请输入邀请码" autocomplete="off" required /><button type="submit">进入填报</button></form>
         <p class="demo-hint">演示邀请码：SE2026</p><div class="error-text" data-invite-error aria-live="polite"></div>
       </section>
       <section class="form-workspace" data-workspace hidden>
-        <div class="enterprise-shell">
-          <aside class="enterprise-sidebar"><h1>企业填报</h1><p>项目数据按步骤填写，修改后每5秒保存一次。</p><ol class="step-list"><li><span>01</span>基本信息</li><li><span>02</span>测试环境</li><li><span>03</span>Token产能与时延</li><li><span>04</span>稳定性与能效</li><li><span>05</span>汇总与报告</li></ol></aside>
-          <div class="enterprise-content">
-            <header class="workspace-top"><div><p class="portal-kicker">ENTERPRISE WORKSPACE</p><h2>能力验证项目填报</h2><p>当前草稿仅存于本机；正式版将接入企业隔离、审核与云端续填。</p></div><div class="save-state" data-save-state>尚未修改</div></header>
-            <form data-enterprise-form>
-              <section class="form-section"><header><span>STEP 01</span><h3>企业与项目基本信息</h3><p>用于建立项目归属和报告基础信息。</p></header><div class="field-grid"><div class="field"><label for="company">企业名称</label><input id="company" name="company" /></div><div class="field"><label for="project">项目名称</label><input id="project" name="project" /></div><div class="field"><label for="product">产品或服务名称</label><input id="product" name="product" /></div><div class="field"><label for="version">型号与版本</label><input id="version" name="version" /></div></div></section>
-              <section class="form-section"><header><span>STEP 02</span><h3>软硬件与测试环境</h3><p>测试结论只对声明的环境和口径负责。</p></header><div class="field-grid"><div class="field"><label for="hardware">计算硬件</label><input id="hardware" name="hardware" placeholder="CPU / GPU / NPU、数量与显存" /></div><div class="field"><label for="model">模型与精度</label><input id="model" name="model" placeholder="模型、版本、精度" /></div><div class="field"><label for="software">软件环境</label><input id="software" name="software" placeholder="系统、驱动、框架、推理引擎" /></div><div class="field"><label for="network">网络与部署</label><input id="network" name="network" placeholder="公有云 / 专有云、网络条件" /></div></div></section>
-              <section class="form-section"><header><span>STEP 03</span><h3>Token产能与响应体验</h3><p>记录测试条件、结果与异常，不把单次样本直接写成生产SLA。</p></header><div class="field-grid"><div class="field"><label for="throughput">输出吞吐（token/s）</label><input id="throughput" name="throughput" inputmode="decimal" /></div><div class="field"><label for="ttft">TTFT P95（ms）</label><input id="ttft" name="ttft" inputmode="decimal" /></div><div class="field"><label for="tpot">TPOT（ms/token）</label><input id="tpot" name="tpot" inputmode="decimal" /></div><div class="field"><label for="success">调用成功率（%）</label><input id="success" name="success" inputmode="decimal" /></div><div class="field full"><label for="conditions">测试条件与计算说明</label><textarea id="conditions" name="conditions"></textarea></div></div></section>
-              <section class="form-section"><header><span>STEP 04</span><h3>承载能力、稳定性与能效</h3><p>填写持续运行、故障恢复、资源利用和能耗情况。</p></header><div class="field-grid"><div class="field"><label for="concurrency">稳定并发数</label><input id="concurrency" name="concurrency" inputmode="numeric" /></div><div class="field"><label for="availability">服务可用性（%）</label><input id="availability" name="availability" inputmode="decimal" /></div><div class="field"><label for="recovery">故障恢复时长（min）</label><input id="recovery" name="recovery" inputmode="decimal" /></div><div class="field"><label for="energy">单位Token能耗（J/token）</label><input id="energy" name="energy" inputmode="decimal" /></div><div class="field full"><label for="notes">问题项、日志和补充说明</label><textarea id="notes" name="notes"></textarea></div></div></section>
+        <div class="enterprise-shell confirmation-shell">
+          <aside class="enterprise-sidebar confirmation-sidebar">
+            <p class="sidebar-kicker">TAIER / TOKEN FACTORY</p><h1>确认书填报</h1><p>按原表单字段分组填写，修改后每5秒保存一次。</p>
+            <ol class="step-list"><li><span>01</span><a href="#organization">单位与联系信息</a></li><li><span>02</span><a href="#product">产品与样品信息</a></li><li><span>03</span><a href="#declaration">判定规则与声明</a></li><li><span>04</span><a href="#generate">确认并生成 Word</a></li></ol>
+            <div class="sidebar-boundary"><b>本期边界</b><p>生成的是《设备检验确认书》，不是检验合格证书。</p></div>
+          </aside>
+          <div class="enterprise-content confirmation-content">
+            <header class="workspace-top confirmation-top"><div><p class="portal-kicker">DEVICE INSPECTION CONFIRMATION</p><h2>设备检验确认书在线填报</h2><p>填写企业信息并上传商标后，可直接下载已填写的 Word。</p></div><div class="save-state" data-save-state>尚未修改</div></header>
+            <div class="form-notice"><div><span>01</span><b>企业填写</b><p>单位、产品、联系人、样品和委托信息。</p></div><div><span>02</span><b>系统生成</b><p>保留原 Word 表格、官方 Logo 和客户须知。</p></div><div><span>03</span><b>后续补录</b><p>任务编号、完成日期、费用和签字保持空白。</p></div></div>
+            <form data-enterprise-form novalidate>
+              <section class="form-section" id="organization"><header><span>STEP 01</span><h3>单位与联系信息</h3><p>带 * 为生成 Word 前必填项。</p></header><div class="field-grid">
+                <div class="field"><label for="sendDate">送检日期 *</label><input id="sendDate" name="sendDate" type="date" required /></div><div class="field"><label for="inspectedOrg">受检单位 *</label><input id="inspectedOrg" name="inspectedOrg" autocomplete="organization" required /></div>
+                <div class="field"><label for="producerOrg">生产单位 *</label><div class="field-with-action"><input id="producerOrg" name="producerOrg" required /><button type="button" data-copy-org="producerOrg">同受检单位</button></div></div><div class="field"><label for="entrustedOrg">委托单位 *</label><div class="field-with-action"><input id="entrustedOrg" name="entrustedOrg" required /><button type="button" data-copy-org="entrustedOrg">同受检单位</button></div></div>
+                <div class="field"><label for="origin">产地 *</label><input id="origin" name="origin" required /></div><div class="field"><label for="contactPerson">联系人 *</label><input id="contactPerson" name="contactPerson" autocomplete="name" required /></div><div class="field"><label for="phone">电话 *</label><input id="phone" name="phone" type="tel" autocomplete="tel" required /></div><div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required /></div><div class="field"><label for="businessContact">业务接口人 *</label><input id="businessContact" name="businessContact" required /></div><div class="field full"><label for="address">地址 *</label><textarea id="address" name="address" autocomplete="street-address" required></textarea></div>
+                <div class="field full logo-field"><label for="companyLogo">企业商标 / Logo *</label><div class="logo-upload"><div class="logo-preview" data-logo-preview><span>尚未上传</span></div><div><input id="companyLogo" name="companyLogo" type="file" accept="image/png,image/jpeg" /><p>支持 PNG/JPG，建议白底横版 Logo，不超过5MB。</p><button class="secondary-control" type="button" data-remove-logo hidden>移除 Logo</button></div></div></div>
+              </div></section>
+              <section class="form-section" id="product"><header><span>STEP 02</span><h3>产品与样品信息</h3><p>该部分将写入原确认书的产品和送样位置。</p></header><div class="field-grid">
+                <div class="field"><label for="productName">产品名称 *</label><input id="productName" name="productName" required /></div><div class="field"><label for="productModel">产品型号 *</label><input id="productModel" name="productModel" required /></div><div class="field"><label for="sampleQuantity">样品数量 *</label><input id="sampleQuantity" name="sampleQuantity" placeholder="例：1台" required /></div><div class="field"><label for="productionDate">生产日期 *</label><input id="productionDate" name="productionDate" type="date" required /></div><div class="field"><label for="samplingMethod">抽样 / 送样 *</label><select id="samplingMethod" name="samplingMethod" required><option value="">请选择</option><option value="送样">送样</option><option value="抽样">抽样</option></select></div><div class="field"><label for="softwareVersion">软件版本 *</label><input id="softwareVersion" name="softwareVersion" required /></div><div class="field full"><label for="serialModel">产品出厂序号（型号） *</label><input id="serialModel" name="serialModel" required /></div><div class="field"><label for="attachmentNote">附件说明</label><input id="attachmentNote" name="attachmentNote" placeholder="无则留空" /></div><div class="field"><label for="otherNote">其他说明</label><input id="otherNote" name="otherNote" placeholder="无则留空" /></div>
+              </div></section>
+              <section class="form-section" id="declaration"><header><span>STEP 03</span><h3>判定规则与声明</h3><p>依原确认书保留选项，未特别说明时使用默认值。</p></header>
+                <fieldset class="choice-group"><legend>符合性判定规则 *</legend><label><input type="radio" name="conformityRule" value="1" checked /><span><b>1．不考虑测量不确定度</b><small>直接以测量结果值或平均值作为符合性判定依据。</small></span></label><label><input type="radio" name="conformityRule" value="2" /><span><b>2．考虑测量不确定度，无法判定时统一判定为符合</b></span></label><label><input type="radio" name="conformityRule" value="3" /><span><b>3．考虑测量不确定度，无法判定时统一判定为不符合</b></span></label></fieldset>
+                <fieldset class="choice-group compact-choice"><legend>报告是否仅作为科研、教学或内部质量控制之用 *</legend><label><input type="radio" name="reportUse" value="yes" /><span><b>是</b></span></label><label><input type="radio" name="reportUse" value="no" /><span><b>否</b></span></label><label><input type="radio" name="reportUse" value="na" checked /><span><b>不适用</b></span></label></fieldset>
+              </section>
+              <section class="form-section generation-section" id="generate"><header><span>STEP 04</span><h3>确认并生成 Word</h3><p>以下泰尔认证字段在 Word 中保持空白，不由企业填写。</p></header><div class="reserved-fields"><span>任务编号</span><span>完成日期</span><span>预计费用</span><span>取报告日期</span><span>取设备日期</span><span>取报告人</span><span>取设备人</span><span>接收人签字</span></div><label class="accuracy-confirm"><input type="checkbox" name="accuracyConfirm" required /><span>我已核对上述信息，确认内容真实、准确、有效。</span></label><div class="generation-feedback" data-generation-feedback aria-live="polite"></div></section>
             </form>
-            <div class="workspace-actions"><button type="button" data-save-now>立即保存</button><button type="button" class="primary-action" data-generate-report>生成报告预览</button></div>
-            <section class="report-preview" data-report-preview hidden><small>企业自填 · 预览版</small><h2>能力验证项目报告预览</h2><div class="report-grid" data-report-grid></div><p>Word/PDF正式版将在报告模板和字段映射确认后接入。当前可使用浏览器打印功能检查预览版式。</p><button type="button" class="primary-action" data-print-report>打印 / 另存为PDF</button></section>
+            <div class="workspace-actions"><button type="button" data-save-now>立即保存</button><button type="button" class="primary-action" data-generate-report>生成设备检验确认书</button></div>
           </div>
         </div>
       </section>
     </main>
-    <footer class="portal-footer"><span>智能系统与工程能力中心</span><span>V3 前端流程预览 · 2026-08-17</span></footer>
+    <footer class="portal-footer"><span>智能系统与工程能力中心</span><span>泰尔认证填报演示 · 2026-08-31</span></footer>
   </body>
 </html>
