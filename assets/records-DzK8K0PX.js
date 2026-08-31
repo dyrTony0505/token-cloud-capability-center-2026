@@ -1,0 +1,96 @@
+import"./access-DpTLQoBY.js";/* empty css               */import{J as C}from"./jszip.min-DL2cmomj.js";const E={101:{purpose:"验证平台对主流、国产及行业模型的兼容接入、部署运行和版本管理能力。",steps:`a）应支持主流开源大模型、商用大模型、行业垂类模型的兼容适配，覆盖不同参数规模、不同模态的大语言模型、多模态模型。
+b)应支持国产大模型的全面适配，实现国产模型的标准化接入、部署与运行，保障模型生产环节的自主可控。
+c)应支持多版本模型的统一管理，实现模型版本的迭代、归档、回滚全生命周期管控，保障 Token 生产的一致性与稳定性`,expected:"应完成主流、国产及行业模型兼容适配和多版本管理测试，模型能够正常接入、部署、运行及迭代。"},102:{purpose:"验证平台标准组件和自定义组件的调用、管理、权限控制及复用能力。",steps:`a)应提供 Token 生产全流程所需的标准化组件库，覆盖数据处理、模型训练、推理优化、效果评估等全环节组件，支持组件的一键调用与编排。
+b)应支持自定义组件上传与管理，允许用户上传自研组件，实现组件的版本管理、权限管控与复用。
+c)应支持组件的兼容性检测与性能优化，保障组件在不同模型、不同资源环境下的稳定运行`,expected:"应完成标准组件调用及自定义组件上传、版本和权限管理测试，组件能够稳定运行并复用。"},103:{purpose:"验证平台分布式训练、增量训练和多种模型精调模式的配置、执行、监控与评估能力。",steps:`分布式训练能力要求
+应支持大模型分布式训练能力，提供数据并行、张量并行、流水线并行等分布式训练策略，适配千亿级参数大模型的训练需求，提升 Token 生产的基础模型供给效率。
+应支持分布式训练的容错机制，实现训练任务的断点续训、故障自动恢复，保障大规模训练任务的稳定运行。
+应支持训练过程的实时监控与性能调优，可实时查看训练进度、算力利用率、损失函数等指标，提供训练策略优化建议。
+增量训练能力要求
+应支持大模型增量训练能力，基于行业垂类数据、业务场景数据，对基础大模型进行增量预训练，适配行业场景的 Token 生产需求。
+应支持增量训练的轻量化配置，提供标准化的训练流程模板，降低增量训练的技术门槛。
+应支持增量训练模型的效果评估，提供自动化的模型效果评测工具，保障增量训练后模型的 Token 生成质量。
+模型精调能力要求
+应支持全参数微调、LoRA 微调、QLoRA 微调等多种模型精调模式，适配不同业务场景、不同数据规模的精调需求。
+应提供标准化的精调流程模板，支持用户快速完成精调数据处理、训练配置、任务下发、效果评估全流程操作。
+应支持精调模型的统一管理与部署，实现精调模型与基础模型的联动调度，保障业务场景下的 Token 生成效果。`,expected:"应完成分布式训练、增量训练及精调流程测试，训练任务能够正常执行、监控、恢复并完成效果评估。"},201:{purpose:"模型聚合推理部署能力应实现多模型的统一纳管、推理优化与服务化交付，为上层应用提供标准化的 Token 调用服务",steps:`多模型聚合能力要求
+a) 应支持多厂商、多类型、多版本模型的统一纳管与聚合，提供统一的模型调用入口，实现多模型的一站式管理与调度。
+b) 应支持模型的统一适配与封装，将不同架构、不同接口的模型封装为标准化的调用服务，降低上层应用的多模型适配成本。
+c) 应支持模型的智能路由与负载均衡，根据业务需求、模型负载、调用成本，自动选择最优模型提供 Token 服务。
+AI 服务网关能力要求
+a) 应提供统一的 AI 服务网关，实现 Token 调用请求的统一接入、鉴权、限流、转发，为上层应用提供标准化的 API 调用接口。
+b) 应支持请求的流量管控能力，提供限流、熔断、降级机制，保障高并发场景下 Token 服务的稳定运行。
+c) 应支持调用请求的全链路追踪，记录请求的流转路径、响应时间、调用结果，实现请求的可观测、可追溯。
+在线推理交付能力要求
+a) 应支持大模型在线推理服务的一键部署与交付，提供标准化的推理服务实例，支持实时推理、流式推理等多种推理模式。
+b) 应支持推理服务的弹性扩缩容，根据调用请求量自动调整实例数量，保障推理服务的响应速度与资源利用率。
+c) 应支持推理服务的多实例部署与容灾备份，保障推理服务的高可用性，避免单点故障影响 Token 服务交付。
+路由调度能力要求
+a) 应支持智能路由调度能力，根据 Token 调用请求的业务场景、优先级、成本要求、延迟要求，自动路由至最优的模型实例与算力节点。
+b) 应支持优先级调度、权重调度、最低延迟调度、最低成本调度等多种调度策略，满足不同业务场景的调度需求。
+c) 应支持调度策略的自定义配置，允许用户根据业务需求配置调度规则，实现个性化的路由调度。
+推理优化引擎能力要求
+a) 应具备推理优化引擎，通过算子优化、模型量化、压缩加速、内存优化等技术，提升大模型推理效率，降低 Token 生成的延迟与算力成本。
+b) 应支持多框架、多模型的推理优化适配，覆盖主流深度学习框架与大模型架构，保障优化后的模型推理效果无损。
+c) 应支持推理优化策略的自动匹配，根据模型类型、硬件环境、业务需求，自动选择最优的优化方案。
+SLA 保障能力要求
+a) 应支持分级 SLA 保障能力，为不同等级的租户、不同优先级的业务提供差异化的 SLA 服务承诺，包括服务可用性、响应延迟、调用成功率等指标。
+b) 应支持 SLA 指标的实时监控与统计，可实时查看 SLA 达成情况，对未达标的服务提供告警与优化建议。
+c) 应具备 SLA 违约的补偿机制，保障用户的合法权益。`,expected:"应完成多模型聚合、统一调用、路由调度、限流熔断、全链路追踪及一键部署测试，服务能够稳定提供。"},202:{purpose:"智能体开发与交付能力应提供低代码、可视化的智能体开发工具链，实现智能体的快速构建、编排、部署与交付，拓展 Token 的应用场景与价值.",steps:`Agent 编排能力要求
+a) 应提供可视化的 Agent 编排能力，支持通过拖拽式操作完成智能体的任务规划、工具调用、逻辑流程编排，降低智能体开发门槛。
+b) 应支持多轮对话、任务拆解、自主决策等核心能力的配置，实现复杂业务场景的智能体编排。
+c) 应支持编排完成的智能体的一键调试、预览与发布，提升智能体开发效率。
+Prompt 复用能力要求
+a) 应提供 Prompt 工程管理能力，支持 Prompt 的创建、版本管理、分类存储与检索，实现高质量 Prompt 的沉淀与复用。
+b) 应提供场景化 Prompt 模板库，覆盖通用场景与行业垂类场景，支持用户一键调用与自定义修改。
+c) 应支持 Prompt 效果的自动化评估与优化，提供 Prompt 调优建议，提升 Token 生成的质量与效果。
+插件管理能力要求
+a) 应提供标准化的插件管理能力，支持插件的开发、上传、审核、发布、下架全生命周期管理。
+b) 应提供丰富的内置插件库，覆盖数据检索、工具调用、API 集成、业务系统对接等场景，支持智能体的能力拓展。
+c) 应支持自定义插件的快速接入，提供标准化的插件开发规范与 SDK，降低插件开发门槛。
+应用模板能力要求
+a) 应提供场景化的智能体应用模板库，覆盖客服、营销、办公、研发、教育等通用场景与行业垂类场景，支持用户一键生成应用。
+b) 应支持应用模板的自定义配置与二次开发，允许用户根据业务需求修改模板内容，适配个性化业务场景。
+c) 应支持模板的分享与复用，实现优质应用模板的沉淀与推广。
+开发者工具链能力要求
+a) 应提供完整的智能体开发者工具链，包括开发调试工具、测试工具、部署工具、运维监控工具，覆盖智能体开发全生命周期。
+b) 应提供标准化的 API 与 SDK，支持开发者将智能体能力集成至第三方业务系统，实现能力的灵活调用。
+c) 应提供开发者社区与文档支持，为开发者提供开发指南、最佳实践、问题排查等支持服务。`,expected:"应完成智能体编排、调试、发布、插件管理和模板复用测试，智能体能够正常构建、部署和交付。"},301:{purpose:"验证平台对文本、图像、音频、视频等多模态内容的生成、管控和配置能力。",steps:`a) 应支持文本、图像、音频、视频等多模态内容的生成能力，覆盖多模态输入理解与多模态内容输出全流程。
+b) 应支持多模态内容的质量管控，提供内容合规审查、效果评估与优化能力，保障多模态生成内容的准确性、合规性与一致性。
+c) 应支持多模态生成的个性化配置，支持用户自定义生成内容格式、风格，生成结果适配不同业务场景需求。
+d) 应支持长文本生成、高分辨率图像、长时音频与视频等大规模内容的稳定生成，保障生成过程的可靠性与效果一致性。`,expected:"应完成文本、图像、音频及视频等多模态生成和质量管控测试，生成流程能够正常执行并输出可用结果。"},302:{purpose:"验证Agent发布、订阅、部署、应用市场及生态治理能力。",steps:`a) 应构建开放的 Agent 生态体系，支持智能体的发布、订阅、实例化部署、应用市场等全流程管理，促进 Agent 的流通与复用。
+b) 应提供 Agent 应用市场或类似平台，实现智能体的分类展示、检索下载、评价评分，为用户提供丰富的智能体应用选择。
+c) 应支持 Agent 的权限管控与合规治理，包含审核机制、效果评估、安全检测，保障智能体生态的安全性与合规性。【初阶的凭证，主子账号，合规治理还在开发】
+d) 应提供生态运营机制，支持开发者激励、优质应用推荐、社区互动，促进智能体生态的可持续发展。`,expected:"应完成Agent发布、订阅、部署、市场展示、权限及合规治理测试，Agent能够正常流通和使用。"},303:{purpose:"验证多类型知识源管理、智能检索召回、版本权限和RAG应用能力。",steps:`a) 应支持多元化知识库的构建与管理，支持文本文档、结构化数据、图片、音视频等多类型数据源的上传、解析与存储管理。
+b) 应支持知识库的智能检索与召回，提供文本切分、向量嵌入、语义匹配、混合检索等技术手段，实现知识库内容的精准快速召回。
+c) 应支持知识库的版本管理与权限管控，支持定期更新，保障知识库内容的准确性、时效性与安全性。
+d) 应支持知识库与模型、应用的深度融合，实现检索增强生成（RAG）等能力，提升 Token 生成内容的准确性与专业性。
+e) 应支持多租户知识库隔离，保障不同租户的知识库数据安全与隐私。`,expected:"应完成知识源管理、解析、检索召回、版本权限、RAG及租户隔离测试，知识库能够稳定支撑应用。"},304:{purpose:"验证多场景智能创作、全流程辅助、风格模板及合规管理能力。",steps:`a) 应支持全场景智能创作能力，涵盖文案写作、内容生成、剧本创作、营销策划等多种创作场景，满足不同行业的创作需求。
+b) 应提供创作全流程辅助能力，支持从创作构思、内容生成、风格优化到效果评估的全流程辅助，提升创作效率与效果。
+c) 应支持自定义创作风格模板，允许用户根据业务需求个性化配置创作方式，实现标准化的创作模板与内容处理流程。
+d) 应支持创作内容的版权管理与合规审查，确保生成内容的合规性与原创性，保障用户数据安全与版权安全。【合规审查正在开发中】`,expected:"应完成多场景智能创作、流程辅助、风格模板及内容合规测试，能够按配置生成可用内容。"},401:{purpose:"验证Token工厂从算力、模型服务、应用开发到运维保障的端到端私有化能力。",steps:`a) 应支持 Token 工厂端到端私有化部署能力，涵盖从算力资源、模型服务、应用开发到运维保障的全流程部署能力。
+b) 应提供标准化的私有化部署与交付模板，对不同行业、不同规模的用户提供差异化的私有化方案，降低用户使用门槛。
+c) 应支持私有化部署的全流程管控，可视化实时查看部署进度、资源分配、组件状态，保障私有化部署的按时交付。
+d) 应提供完善的售后与持续运营支持服务，包括运维培训、问题排查、性能优化等，保障用户业务稳定持续运行。`,expected:"应完成端到端私有化部署、交付管控及运维支持测试，系统能够按方案完成部署并稳定运行。"},402:{purpose:"验证通用及行业场景落地、方案复制重构和持续优化能力。",steps:`a) 应面向通用场景与行业垂类场景的 Token 工厂应用落地实现，为不同行业、不同业务场景的用户提供参考案例。
+b) 应支持落地实现的快速复制与重构，提供标准化的解决方案模板，支持用户根据业务需求快速构建 Token 工厂的场景落地。
+c) 应支持持续优化落地实现方案，结合行业最新动态与技术发展趋势，不断更新落地实现内容，引领行业发展。`,expected:"应完成通用及行业场景落地、模板复制重构和持续优化测试，能够形成可交付的应用方案。"},403:{purpose:"验证Token全流程合规治理、内容安全、数据保护及协同管控能力。",steps:`a) 应具备全栈合规治理能力，实现 Token 工厂从生产到流通到应用全流程的合规管控，符合备案审查、生成式人工智能服务管理办法、网络安全等级保护等相关法律法规要求。
+b) 应支持内容安全的全流程合规审查，包含输入审核、生成审核、输出审核、安全拦截，保障 Token 生成内容的合规性。
+c) 应支持数据安全与隐私保护，实现用户数据、训练数据、业务数据的安全存储与安全管控，严格遵守个人信息保护相关法律法规要求。
+d) 应支持多维度合规治理与协同，实现设计过程、模型开发、应用发布、用户交互的合规责任分工与协同管控，保障全链路合规。`,expected:"应完成敏感内容识别、安全拦截、数据保护及协同治理测试，系统能够执行相应合规控制。"},404:{purpose:"验证Token全链路指标监控、日志采集、链路追踪、异常检测和告警能力。",steps:`a) 应具备全栈 Token 可观测能力，实现 Token 工厂从生产到流通到应用的全链路指标监控、日志采集与链路追踪。
+b) 应支持多维度的 Token 指标监控，包含 Token 生产量、调用量、吞吐率、延迟、成功率、成本等核心指标，提供可视化的监控看板。
+c) 应支持全链路日志采集与分析，完整记录 Token 全生命周期各环节的运行日志，包含系统日志、业务日志、操作日志，实现问题的快速定位追溯。
+d) 应支持分布式链路追踪，实现 Token 调用请求的全链路链路追踪，精准定位性能瓶颈与故障节点。
+e) 应支持异常检测与智能告警，对 Token 关键指标出现异常时，通过多渠道及时告警通知，并提供根因分析与处理建议。`,expected:"应完成Token指标、日志、链路和告警测试，能够对全链路运行状态进行监控、追踪和告警。"},405:{purpose:"验证Token全链路计量、统计、计费、账单和配额管控能力。",steps:`a) 应具备全链路 Token 计量能力，实现 Token 生产、流通、消耗的精准计量与统计，应用层达到 Token 最小粒度计量。
+b) 应支持多维度计量统计，按租户、用户、模型、应用、时间维度统计 Token 使用量与资源消耗，为运营分析提供数据支撑。
+c) 应支持自动化计量与计费策略，可根据模型类型、Token 用量、调用成本、业务优先级等参数配置差异化的计费策略。
+d) 应支持账单生成、明细查询、对账核算等功能，提供可视化的费用分析报表，帮助用户精准掌控 Token 使用成本。
+e) 应支持 Token 配额管控，按租户、用户、应用维度设置 Token 使用上限，实现按量预付与超额控制，保障用户实现成本可控。`,expected:"应完成Token计量、统计、计费、账单和配额管控测试，计量结果能够准确查询并支撑成本控制。"},406:{purpose:"验证Token全链路高可用、故障恢复、过载保护、容灾切换和压力保障能力。",steps:`a) 应具备 Token 全链路稳定性保障能力，实现从底层算力资源、模型服务、核心组件到上层应用的全链路高可用保障。
+b) 应支持全链路健康检测、故障细粒度诊断、故障自动恢复能力，实现故障的快速定位与处理，降低故障影响范围与停机时间。
+c) 应支持流量管控与过载保护，通过限流、熔断、降级等机制，保障高负载场景下系统的稳定运行。
+d) 应支持故障隔离与容灾切换，实现算力资源、模型集群的多活架构，保障核心链路顺序，确保 Token 服务的连续可用。
+e) 应支持全链路压力测试与性能优化，模拟高负载场景与极限场景，进行系统性能瓶颈压力测试，提前发现性能瓶颈并持续优化。`,expected:"应完成健康检测、故障恢复、过载保护、容灾切换和压力测试，系统能够保持连续可用并形成测试记录。"}},U="se-taier-confirmation-draft-v1",P="se-taier-token-factory-record-v1",F="./templates/token-factory-original-record-template.docx?v=3.2.0",j="./templates/token-factory-inspection-report-template.docx?v=3.2.0",l=document.querySelector("[data-record-form]"),q=document.querySelector("[data-record-save-state]"),c=document.querySelector("[data-record-feedback]"),b=document.querySelector("[data-generated-files]"),u=document.querySelector("[data-generate-documents]");let g=!1;const A=[["101","模型兼容能力要求","Token生产能力要求"],["102","组件管理能力要求","Token生产能力要求"],["103","模型训练能力要求","Token生产能力要求"],["201","模型聚合推理部署能力要求","Token流通能力要求"],["202","智能体开发与交付能力要求","Token流通能力要求"],["301","多模态生成能力要求","Token应用能力要求"],["302","Agent生态能力要求","Token应用能力要求"],["303","知识库管理能力要求","Token应用能力要求"],["304","智能创作能力要求","Token应用能力要求"],["401","端到端私有化能力要求","Token治理与全栈效能保障能力要求"],["402","应用场景落地实现能力要求","Token治理与全栈效能保障能力要求"],["403","全栈合规治理与协同能力要求","Token治理与全栈效能保障能力要求"],["404","全栈Token可观测能力要求","Token治理与全栈效能保障能力要求"],["405","Token计量与管控能力要求","Token治理与全栈效能保障能力要求"],["406","全链路稳定性保障能力要求","Token治理与全栈效能保障能力要求"]],G=[["entrustedOrg","委托单位",!0],["producerOrg","生产单位",!0],["productName","产品名称",!0],["productModel","产品型号",!0],["softwareVersion","产品/软件版本",!0],["sampleQuantity","样品数量",!0],["sampleNumber","样品编号",!0],["sampleSender","送样人",!0],["samplingBase","抽样基数",!1],["samplingDate","抽样日期",!1,"date"],["arrivalDate","到样日期",!0,"date"],["inspectionDate","检验日期",!0,"date"],["inspectionLocation","检验地点",!0],["photoLocation","样品照片拍摄地点",!1],["photoDate","样品照片拍摄日期",!1,"date"],["productDescription","产品描述",!0,"textarea"],["preSampleState","检验前样品状态",!0,"textarea"],["postSampleState","检验后样品状态",!0,"textarea"],["generalNote","总体备注",!1,"textarea"]],V=[["hardwareName","硬件设备名称",!0],["hardwareModel","型号",!0],["hardwareSerial","出厂编号",!0],["assetNumber","资产编号",!0],["osVersion","操作系统版本",!0],["configuration","配置",!0],["firewall","防火墙 / 存储",!0],["antivirus","杀毒软件",!0],["cooling","散热方式",!0],["envState","使用前后状态",!0]];let h={};function M([e,a,t=!1,n="text"]){const o=n==="textarea"?`<textarea id="${e}" name="${e}" ${t?"required":""}></textarea>`:`<input id="${e}" name="${e}" type="${n}" ${t?"required":""} />`;return`<div class="field ${n==="textarea"?"full":""}"><label for="${e}">${a}${t?" *":""}</label>${o}</div>`}document.querySelector("[data-base-fields]").innerHTML=G.map(M).join("");document.querySelector("[data-environment-fields]").innerHTML=`${V.map(M).join("")}<div class="environment-example"><b>填写提示</b><p>示例：硬件设备名称“科研类便携式笔记本”；型号“联想 ThinkPad book”；操作系统“Windows 11 家庭中文版”。请按本次实际检验环境填写，每个项目自动共用。</p></div><div class="fixed-instruments"><b>检验用仪表设备（固定）</b><p>笔记本电脑终端 / ThinkPad T14p 2023款（00CD） / 联想 / PF4J36F2 / DX231120ZJW02 / 正常</p><small>本区域由泰尔认证方维护，企业无需填写。</small></div>`;document.querySelector("[data-record-items]").innerHTML=A.map(([e,a,t],n)=>`
+  <details class="record-item" ${n===0?"open":""}>
+    <summary><span>${e}</span><div><b>${a}</b><small>${t}</small></div><em data-item-state="${e}">待填写</em></summary>
+    <div class="record-item-body"><details class="item-guide" open><summary>查看完整测试说明</summary><b>测试目的</b><p>${E[e].purpose}</p><b>测试步骤</b><p>${E[e].steps}</p><b>预期结果</b><p>${E[e].expected}</p></details><label>测试结果 *<textarea name="result_${e}" required placeholder="请填写实际操作、输出和观察到的结果，尽量对应上方步骤逐项描述"></textarea></label><label>Demo 截图 *<input type="file" name="demo_${e}" accept="image/png,image/jpeg" multiple required /><small>必填：请上传能体现程序运行结果的截图，可多选。</small><div class="demo-preview" data-demo-preview="${e}"></div></label><label>备注（非必填）<textarea name="note_${e}" placeholder="非必要可不填写"></textarea></label><input type="hidden" name="conclusion_${e}" value="合格" /></div>
+  </details>`).join("");function k(){return Object.fromEntries(new FormData(l).entries())}function d(e){q.textContent=e}function W(e){return String(e??"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&apos;")}function _(e){return String(e||"未命名").replace(/[\\/:*?"<>|]/g,"-").replace(/\s+/g," ").trim().slice(0,80)}function T(e){if(!e)return"";const[a,t,n]=e.split("-").map(Number);return`${a}.${t}.${n}`}function v(){var e;try{return((e=JSON.parse(localStorage.getItem(U)||"null"))==null?void 0:e.fields)||{}}catch{return{}}}function w(e=!1){if(!(!g&&!e))try{localStorage.setItem(P,JSON.stringify({updatedAt:new Date().toISOString(),fields:k()})),g=!1,d(`已保存 ${new Date().toLocaleTimeString("zh-CN",{hour12:!1})}`)}catch{d("保存失败")}}function B(){const e=v();Object.entries({entrustedOrg:"entrustedOrg",producerOrg:"producerOrg",productName:"productName",productModel:"productModel",softwareVersion:"softwareVersion",sampleQuantity:"sampleQuantity",sampleSender:"contactPerson",arrivalDate:"sendDate",inspectionDate:"sendDate"}).forEach(([t,n])=>{l.elements[t]&&e[n]&&(l.elements[t].value=e[n])});try{const t=JSON.parse(localStorage.getItem(P)||"null");Object.entries((t==null?void 0:t.fields)||{}).forEach(([n,o])=>{const r=l.elements.namedItem(n);r&&(r instanceof RadioNodeList,r.value=o)}),t!=null&&t.fields&&d("已恢复本机草稿")}catch{d("草稿读取失败")}}function J(e){const a={G1:["101","102","103"],G2:["201","202"],G3:["301","302","303","304"],G4:["401","402","403","404","405","406"]},t={};return Object.entries(a).forEach(([n,o])=>{const r=o.map(i=>e[`conclusion_${i}`]);t[n]={should:o.length,actual:r.filter(i=>i!=="不涉及").length,na:r.filter(i=>i==="不涉及").length,pass:r.filter(i=>i==="合格").length,fail:r.filter(i=>i==="不合格").length}}),t.TOTAL=Object.values(t).reduce((n,o)=>({should:n.should+o.should,actual:n.actual+o.actual,na:n.na+o.na,pass:n.pass+o.pass,fail:n.fail+o.fail}),{should:0,actual:0,na:0,pass:0,fail:0}),t}function H(e){const a=J(e),t={ENTRUSTED_ORG:e.entrustedOrg,PRODUCER_ORG:e.producerOrg,PRODUCT_NAME:e.productName,PRODUCT_MODEL:e.productModel,SOFTWARE_VERSION:e.softwareVersion,SAMPLE_QUANTITY:e.sampleQuantity,SAMPLE_NUMBER:e.sampleNumber,SAMPLE_SENDER:e.sampleSender,SAMPLING_BASE:e.samplingBase,SAMPLING_DATE:T(e.samplingDate),ARRIVAL_DATE:T(e.arrivalDate),INSPECTION_DATE:T(e.inspectionDate),INSPECTION_LOCATION:e.inspectionLocation,PHOTO_LOCATION:e.photoLocation,PHOTO_DATE:T(e.photoDate),PRODUCT_DESCRIPTION:e.productDescription,PRE_SAMPLE_STATE:e.preSampleState,POST_SAMPLE_STATE:e.postSampleState,GENERAL_NOTE:e.generalNote||"/",SUMMARY_NOTE:e.generalNote||"/",LEAD_INSPECTOR:e.leadInspector,REVIEWER:e.reviewer,HARDWARE_NAME:e.hardwareName,HARDWARE_MODEL:e.hardwareModel,HARDWARE_SERIAL:e.hardwareSerial,ASSET_NUMBER:e.assetNumber,OS_VERSION:e.osVersion,CONFIGURATION:e.configuration,FIREWALL:e.firewall,ANTIVIRUS:e.antivirus,COOLING:e.cooling,ENV_STATE:e.envState,INSTRUMENT_NAME:"笔记本电脑终端",INSTRUMENT_MODEL:"ThinkPad T14p 2023款（00CD）",INSTRUMENT_MAKER:"联想",INSTRUMENT_SERIAL:"PF4J36F2",PLATFORM_SERIAL:"DX231120ZJW02",INSTRUMENT_STATE:"正常"},n=`硬件设备名称：${e.hardwareName||""}；型号：${e.hardwareModel||""}；出厂编号：${e.hardwareSerial||""}；资产编号：${e.assetNumber||""}；操作系统版本：${e.osVersion||""}；配置：${e.configuration||""}；防火墙/存储：${e.firewall||""}；杀毒软件：${e.antivirus||""}；散热方式：${e.cooling||""}；使用前后状态：${e.envState||""}`;A.forEach(([r])=>{t[`ENV_${r}`]=n,t[`RESULT_${r}`]=`${e[`result_${r}`]||""}
+[[DEMO_${r}]]`,t[`NOTE_${r}`]=e[`note_${r}`]||"/",t[`CONCLUSION_${r}`]="合格",t[`INSPECTOR_${r}`]="",t[`REVIEWER_${r}`]=""}),Object.entries(a).forEach(([r,i])=>Object.entries(i).forEach(([p,S])=>{t[`${r}_${p.toUpperCase()}`]=S}));const o=a.TOTAL;return t.SUMMARY=`应测 ${o.should} 项；实测 ${o.actual} 项；不涉及项 ${o.na} 项；合格项 ${o.pass} 项；不合格 ${o.fail} 项。结论：${o.fail?"存在不合格项":"所测项目符合要求"}`,t}async function I(e,a){const t=await fetch(e);if(!t.ok)throw new Error("无法加载 Word 模板");const n=await C.loadAsync(await t.arrayBuffer());let r=await n.file("word/document.xml").async("string");r.includes("xmlns:wp=")||(r=r.replace("<w:document ",'<w:document xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" ')),r.includes("xmlns:a=")||(r=r.replace("<w:document ",'<w:document xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" ')),r.includes("xmlns:pic=")||(r=r.replace("<w:document ",'<w:document xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture" ')),Object.entries(H(a)).forEach(([s,f])=>{r=r.replaceAll(`{{${s}}}`,W(f))});let i=await n.file("word/_rels/document.xml.rels").async("string"),p=Math.max(0,...[...i.matchAll(/Id="rId(\d+)"/g)].map(s=>Number(s[1])))+1,S=500;for(const[s]of A){const f=[];for(const[N,m]of(h[s]||[]).entries()){const O=`rId${p++}`,$=`demo-${s}-${N+1}.png`;n.file(`word/media/${$}`,m.bytes),i=i.replace("</Relationships>",`<Relationship Id="${O}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/${$}"/></Relationships>`);const R=Math.min(52e5/m.width,3e6/m.height),y=Math.round(m.width*R),L=Math.round(m.height*R);f.push(`<w:r><w:br/><w:drawing><wp:inline distT="0" distB="0" distL="0" distR="0"><wp:extent cx="${y}" cy="${L}"/><wp:docPr id="${S++}" name="Demo ${s}-${N+1}"/><a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture"><pic:pic><pic:nvPicPr><pic:cNvPr id="0" name="${$}"/><pic:cNvPicPr/></pic:nvPicPr><pic:blipFill><a:blip r:embed="${O}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill><pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${y}" cy="${L}"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr></pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r>`)}r=r.replace(`[[DEMO_${s}]]`,`</w:t></w:r>${f.join("")}<w:r><w:t>`)}n.file("word/_rels/document.xml.rels",i);const x=r.match(/\{\{[A-Z0-9_]+\}\}/g);if(x)throw new Error(`仍有未填字段：${[...new Set(x)].join(", ")}`);return n.file("word/document.xml",r),n.generateAsync({type:"blob",mimeType:"application/vnd.openxmlformats-officedocument.wordprocessingml.document",compression:"DEFLATE"})}function D(e,a,t){const n=URL.createObjectURL(e),o=document.createElement("a");o.href=n,o.download=a,o.textContent=t,o.className="generated-file-link",b.append(o)}async function Q(){var e;if(c.className="generation-feedback",c.textContent="",!l.reportValidity()){const a=[...l.querySelectorAll(":invalid")];(e=l.querySelector(":invalid"))==null||e.scrollIntoView({behavior:"smooth",block:"center"}),c.textContent=a.length?`请完成必填信息：${a.slice(0,3).map(t=>t.name||t.id||"确认项").join("、")}${a.length>3?"等":""}`:"请完成全部必填信息和15项检验记录。",c.classList.add("is-error");return}u.disabled=!0,u.textContent="正在生成...";try{w(!0);const a=k(),[t,n]=await Promise.all([I(F,a),I(j,a)]);b.replaceChildren(),b.hidden=!1;const o=`${_(a.entrustedOrg)}-${_(a.productName)}`;D(t,`${o}-Token工厂-原始记录.docx`,"下载原始记录 Word"),D(n,`${o}-Token工厂-检验报告.docx`,"下载检验报告 Word"),c.textContent="两份 Word 已生成，请分别下载。",c.classList.add("is-success")}catch(a){c.textContent=`生成失败：${a.message}`,c.classList.add("is-error")}finally{u.disabled=!1,u.textContent="生成两份 Word"}}l.addEventListener("input",e=>{var t,n,o;g=!0,d("待保存");const a=(n=(t=e.target.name)==null?void 0:t.match(/(?:result|conclusion|env)_(\d+)/))==null?void 0:n[1];if(a){const r=k(),i=r.hardwareName&&r[`result_${a}`]&&r[`conclusion_${a}`]&&((o=h[a])==null?void 0:o.length),p=document.querySelector(`[data-item-state="${a}"]`);p.textContent=i?"已填写":"填写中",p.classList.toggle("is-complete",!!i)}});async function K(e){const a=await createImageBitmap(e),t=Math.min(1,1400/a.width,1e3/a.height),n=document.createElement("canvas");n.width=Math.round(a.width*t),n.height=Math.round(a.height*t),n.getContext("2d").drawImage(a,0,0,n.width,n.height);const o=await new Promise(r=>n.toBlob(r,"image/png",.9));return{bytes:new Uint8Array(await o.arrayBuffer()),width:n.width,height:n.height,url:URL.createObjectURL(o)}}document.querySelectorAll('input[type="file"][name^="demo_"]').forEach(e=>e.addEventListener("change",async()=>{const a=e.name.slice(5);h[a]=await Promise.all([...e.files].map(K)),document.querySelector(`[data-demo-preview="${a}"]`).replaceChildren(...h[a].map((n,o)=>{const r=new Image;return r.src=n.url,r.alt=`Demo 截图 ${o+1}`,r})),g=!0,d("待保存")}));document.querySelector("[data-record-save]").addEventListener("click",()=>w(!0));u.addEventListener("click",Q);window.setInterval(w,5e3);window.addEventListener("beforeunload",()=>w());B();
