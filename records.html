@@ -3,15 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Token工厂原始记录在线填报，并同步生成原始记录与检验报告。" />
-    <meta name="build-version" content="3.2.3-certification-flow" />
-    <title>Token工厂原始记录填报｜泰尔认证</title>
+    <meta name="description" content="泰尔认证原始记录在线填报与 Word 生成。" />
+    <meta name="build-version" content="3.3.0-multi-certification" />
+    <title>原始记录填报｜泰尔认证</title>
     <script>document.documentElement.classList.add('access-pending')</script>
-    <script type="module" crossorigin src="./assets/records-BJGRBhJH.js"></script>
+    <script type="module" crossorigin src="./assets/records-B5ruzPQq.js"></script>
     <link rel="modulepreload" crossorigin href="./assets/access-DpTLQoBY.js">
-    <link rel="modulepreload" crossorigin href="./assets/jszip.min-DL2cmomj.js">
+    <link rel="modulepreload" crossorigin href="./assets/certification-projects-D-6hGgo4.js">
     <link rel="stylesheet" crossorigin href="./assets/access-DMHtwMoL.css">
-    <link rel="stylesheet" crossorigin href="./assets/portal-COvzhoyH.css">
+    <link rel="stylesheet" crossorigin href="./assets/portal-Dy3GsJ2f.css">
   </head>
   <body>
     <header class="portal-header">
@@ -20,22 +20,22 @@
     </header>
     <main class="records-page">
       <aside class="records-sidebar">
-        <p class="sidebar-kicker">TOKEN FACTORY / STEP 02</p><h1>原始记录填报</h1><p>一次填写，同时生成原始记录与检验报告。</p>
-        <ol class="step-list"><li><span>01</span><a href="#base">基础与样品</a></li><li><span>02</span><a href="#environment">环境与设备</a></li><li><span>03</span><a href="#items">15项检验记录</a></li><li><span>04</span><a href="#output">生成两份文件</a></li></ol>
-        <a class="sidebar-back" href="./enterprise.html?v=3.2.0">← 返回确认书</a>
+        <p class="sidebar-kicker" data-record-project-kicker>PROJECT / STEP 02</p><h1>原始记录填报</h1><p data-record-output-summary>一次填写，生成对应 Word。</p>
+        <ol class="step-list"><li><span>01</span><a href="#base">基础与样品</a></li><li><span>02</span><a href="#environment">环境与设备</a></li><li><span>03</span><a href="#items" data-record-count-nav>检验记录</a></li><li><span>04</span><a href="#output" data-record-output-nav>生成文件</a></li></ol>
+        <a class="sidebar-back" href="./enterprise.html?v=3.3.0">← 返回项目选择</a>
       </aside>
       <section class="records-content">
-        <header class="workspace-top confirmation-top"><div><p class="portal-kicker">ORIGINAL RECORD → INSPECTION REPORT</p><h2>Token工厂原始记录填报</h2><p>原始记录是完整数据源，检验报告从相同字段自动提取，不需要重复填写。</p></div><div class="save-state" data-record-save-state>尚未修改</div></header>
+        <header class="workspace-top confirmation-top"><div><p class="portal-kicker" data-record-flow-label>ORIGINAL RECORD</p><h2 data-record-title>原始记录填报</h2><p data-record-description>填写一次，生成对应 Word。</p></div><div class="save-state" data-record-save-state>尚未修改</div></header>
         <div class="form-notice"><div><span>01</span><b>继承信息</b><p>读取上一阶段的单位、产品和版本信息。</p></div><div><span>02</span><b>逐项记录</b><p>查看测试说明，填写结果并上传 Demo 截图。</p></div><div><span>03</span><b>同步生成</b><p>输出原始记录与检验报告两个 Word。</p></div></div>
         <form data-record-form novalidate>
           <section class="form-section" id="base"><header><span>STEP 01</span><h3>基础与样品信息</h3><p>已从确认书草稿继承的内容仍可在此修正。</p></header><div class="field-grid" data-base-fields></div></section>
           <section class="form-section" id="environment"><header><span>STEP 02</span><h3>检验条件与固定设备</h3><p>所有检验项目共用一套环境；仪表设备由泰尔认证方统一维护。</p></header><div class="field-grid" data-environment-fields></div></section>
-          <section class="form-section" id="items"><header><span>STEP 03</span><h3>15项检验记录</h3><p>每项均提供测试目的、步骤和预期结果；企业只需填写实际结果并上传 Demo 截图，检验结论默认“合格”。</p></header><div class="record-items" data-record-items></div></section>
-          <section class="form-section generation-section" id="output"><header><span>STEP 04</span><h3>生成原始记录与检验报告</h3><p>检验依据、任务编号、批准、审核和签发等泰尔字段保持空白。</p></header><label class="accuracy-confirm"><input type="checkbox" name="recordAccuracy" required /><span>我已核对填写内容，并确认测试记录真实、准确、可追溯。</span></label><div class="generation-feedback" data-record-feedback aria-live="polite"></div><div class="generated-files" data-generated-files hidden></div></section>
+          <section class="form-section" id="items"><header><span>STEP 03</span><h3 data-record-count-heading>检验记录</h3><p>每项均提供测试目的、步骤和预期结果；企业只需填写实际结果并上传 Demo 截图，检验结论默认“合格”。</p></header><div class="record-items" data-record-items></div></section>
+          <section class="form-section generation-section" id="output"><header><span>STEP 04</span><h3 data-record-output-heading>生成原始记录</h3><p>检验依据、任务编号、批准、审核和签发等泰尔字段保持空白。</p></header><label class="accuracy-confirm"><input type="checkbox" name="recordAccuracy" required /><span>我已核对填写内容，并确认测试记录真实、准确、可追溯。</span></label><div class="generation-feedback" data-record-feedback aria-live="polite"></div><div class="generated-files" data-generated-files hidden></div></section>
         </form>
-        <div class="workspace-actions"><button type="button" data-record-save>立即保存</button><button type="button" class="primary-action" data-generate-documents>生成两份 Word</button></div>
+        <div class="workspace-actions"><button type="button" data-record-save>立即保存</button><button type="button" class="primary-action" data-generate-documents>生成 Word</button></div>
       </section>
     </main>
-    <footer class="portal-footer"><span>智能系统与工程能力中心</span><span>泰尔认证 · Token工厂</span></footer>
+    <footer class="portal-footer"><span>智能系统与工程能力中心</span><span data-record-footer>泰尔认证</span></footer>
   </body>
 </html>
