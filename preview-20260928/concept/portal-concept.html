@@ -7,10 +7,10 @@
     <meta name="description" content="智能系统与工程能力中心门户预览。" />
     <title>门户预览｜智能系统与工程能力中心</title>
     <script>document.documentElement.classList.add("access-pending")</script>
-    <script type="module" crossorigin src="../assets/portal-CE82BsSi.js"></script>
+    <script type="module" crossorigin src="../assets/portal-Do7hvDOo.js"></script>
     <link rel="modulepreload" crossorigin href="../assets/access-DpTLQoBY.js">
     <link rel="stylesheet" crossorigin href="../assets/access-DMHtwMoL.css">
-    <link rel="stylesheet" crossorigin href="../assets/portal-CxPDTEuk.css">
+    <link rel="stylesheet" crossorigin href="../assets/portal-BQ8C_v0X.css">
   </head>
   <body>
     <header class="concept-nav" data-nav>
@@ -24,7 +24,7 @@
     </header>
 
     <main id="top">
-      <section class="concept-hero">
+      <section class="concept-hero" id="hero" aria-label="门户首页">
         <div class="hero-glow glow-one" aria-hidden="true"></div><div class="hero-glow glow-two" aria-hidden="true"></div>
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-copy reveal">
@@ -40,7 +40,7 @@
           <div class="orbit-node node-left"><small>02</small><b>SERVICE</b><span>模型与网关</span></div>
           <div class="orbit-node node-right"><small>03</small><b>INDUSTRY</b><span>行业任务</span></div>
         </div>
-        <div class="hero-scroll"><span>SCROLL TO EXPLORE</span><i></i></div>
+        <a class="hero-scroll" href="#architecture"><span>向下探索能力架构</span><i aria-hidden="true"></i></a>
       </section>
 
       <section class="manifesto section-light" id="architecture">
@@ -56,12 +56,22 @@
       <section class="scenarios section-dark" id="scenarios">
         <div class="section-label section-label-light reveal"><span>02</span><b>行业场景</b><small>SCENARIOS IN CONTEXT</small></div>
         <div class="scenario-heading reveal"><p class="eyebrow">Eight operating contexts</p><h2>每个行业，<br /><em>都有自己的“正确答案”。</em></h2><p>不同业务对精度、速度、安全、稳定性和成本有不同侧重。点击行业入口，查看对应任务、计算指标、采集方法和验收注意。</p></div>
-        <div class="scenario-feature reveal">
+        <div class="scenario-carousel" role="region" aria-roledescription="轮播" aria-label="八个行业场景">
+        <div class="scenario-controls" hidden>
+          <span class="scenario-count">01 / 08</span>
+          <span class="scenario-timing">每5秒切换 · 悬停或操作时暂停</span>
+          <button type="button" data-carousel-toggle aria-label="暂停自动轮播">暂停轮播</button>
+          <button type="button" data-carousel-prev aria-label="上一个行业场景">←</button>
+          <button type="button" data-carousel-next aria-label="下一个行业场景">→</button>
+        </div>
+        <div class="scenario-feature reveal" role="group" aria-roledescription="场景" aria-label="1 / 8：低空经济">
           <div class="scenario-image"><img src="../assets/industries/low-altitude.png" loading="lazy" decoding="async" alt="低空巡检场景示意" /><span>FEATURED SCENARIO / 01</span></div>
           <div class="scenario-feature-copy"><p class="eyebrow">低空经济 / 低空巡检</p><h3>从飞行画面<br />到可验收任务。</h3><p>围绕连续采集、目标识别、时延与轨迹稳定性组织内容。结合实际模型、硬件和输入条件，明确测试口径与验收方法。</p><a class="text-link light-link" href="../index.html?industry=low-altitude#industries">打开场景详情 <span aria-hidden="true">↗</span></a></div>
         </div>
         <div class="scenario-rail" aria-label="八个行业场景">
           <a href="../index.html?industry=low-altitude#industries" class="scenario-chip active"><b>01</b><span>低空经济</span><small>巡检</small></a><a href="../index.html?industry=embodied#industries" class="scenario-chip"><b>02</b><span>具身智能</span><small>协同作业</small></a><a href="../index.html?industry=gis#industries" class="scenario-chip"><b>03</b><span>GIS / 测绘</span><small>遥感识别</small></a><a href="../index.html?industry=medical#industries" class="scenario-chip"><b>04</b><span>智慧医疗</span><small>辅助决策</small></a><a href="../index.html?industry=finance#industries" class="scenario-chip"><b>05</b><span>金融风控</span><small>风险识别</small></a><a href="../index.html?industry=industry#industries" class="scenario-chip"><b>06</b><span>工业制造</span><small>质量检测</small></a><a href="../index.html?industry=energy#industries" class="scenario-chip"><b>07</b><span>能源电力</span><small>设备巡检</small></a><a href="../index.html?industry=logistics#industries" class="scenario-chip"><b>08</b><span>交通物流</span><small>路径调度</small></a>
+        </div>
+        <p class="scenario-status sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
         </div>
       </section>
 
@@ -78,6 +88,7 @@
         </div>
       </section>
     </main>
+    <nav class="chapter-nav" aria-label="页面章节"><a href="#hero" aria-label="跳到首页" aria-current="location"><span>首页</span></a><a href="#architecture" aria-label="跳到能力架构"><span>能力架构</span></a><a href="#scenarios" aria-label="跳到行业场景"><span>行业场景</span></a><a href="#validation" aria-label="跳到验证入口"><span>验证入口</span></a></nav>
 
     <footer class="concept-footer"><span>智能系统与工程能力中心</span><span>新版在线评审 · 原版站点保留</span></footer>
   </body>
