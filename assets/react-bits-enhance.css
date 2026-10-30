@@ -1,0 +1,171 @@
+/* ==========================================================================
+   React Bits 风格增强层（原生 CSS 版）
+   对应组件：Aurora · BlurText · ShinyText · SpotlightCard · AnimatedContent
+             StarBorder(扫光按钮) · DecryptedText · ClickSpark
+   只做“叠加”，不改动原有样式；删除本文件和 react-bits-enhance.js 即可还原。
+   ========================================================================== */
+
+:root {
+  --rb-accent: 92, 225, 230;      /* #5ce1e6 青色 */
+  --rb-yellow: 246, 200, 81;      /* #f6c851 */
+  --rb-coral: 255, 118, 104;      /* #ff7668 */
+  --rb-ease: cubic-bezier(.22, 1, .36, 1);
+}
+
+/* ---------- Aurora：首屏极光背景 ---------- */
+.rb-aurora {
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* 在原有 .hero::after 暗色遮罩之上、正文(z=2)之下 */
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.6s ease;
+  mix-blend-mode: screen;
+  -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 88%);
+  mask-image: linear-gradient(to bottom, #000 0%, #000 40%, transparent 88%);
+}
+.rb-aurora.is-ready { opacity: .5; }
+
+/* ---------- BlurText：标题逐字模糊浮现 ---------- */
+.rb-blur-char {
+  display: inline-block;
+  white-space: pre;
+  will-change: transform, filter, opacity;
+}
+.rb-blur-run .rb-blur-char {
+  animation: rb-blur-in .9s var(--rb-ease) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+@keyframes rb-blur-in {
+  0%   { opacity: 0; filter: blur(12px); transform: translateY(-0.28em); }
+  55%  { opacity: .6; filter: blur(4px); transform: translateY(0.04em); }
+  100% { opacity: 1; filter: blur(0); transform: none; }
+}
+
+/* ---------- ShinyText：小标题流光 ---------- */
+.rb-shiny {
+  background-image: linear-gradient(110deg,
+      rgba(var(--rb-accent), 1) 0%, rgba(var(--rb-accent), 1) 40%,
+      #ffffff 50%,
+      rgba(var(--rb-accent), 1) 60%, rgba(var(--rb-accent), 1) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rb-shine 4.5s linear infinite;
+}
+@keyframes rb-shine {
+  0%   { background-position: 125% 0; }
+  100% { background-position: -125% 0; }
+}
+
+/* ---------- 主按钮：扫光 + 光晕边框（StarBorder 思路） ---------- */
+.button.primary.rb-shine-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transition: box-shadow .35s ease, transform .35s var(--rb-ease);
+}
+.button.primary.rb-shine-btn::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  z-index: -1;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.75) 50%, transparent 70%);
+  transform: translateX(-120%);
+  animation: rb-btn-sweep 3.8s var(--rb-ease) infinite 1.2s;
+}
+.button.primary.rb-shine-btn:hover {
+  box-shadow: 0 0 0 1px rgba(var(--rb-accent), .6), 0 10px 40px -8px rgba(var(--rb-accent), .65);
+}
+@keyframes rb-btn-sweep {
+  0%, 55% { transform: translateX(-120%); }
+  100%    { transform: translateX(120%); }
+}
+
+/* Magnet：按钮磁吸（位移由 JS 写入变量） */
+.rb-magnet {
+  transform: translate3d(var(--rb-mx, 0), var(--rb-my, 0), 0);
+  transition: transform .45s var(--rb-ease);
+}
+.rb-magnet.is-pulling { transition-duration: .15s; }
+
+/* ---------- SpotlightCard：卡片跟随鼠标的聚光 ---------- */
+.rb-spotlight {
+  --rb-sx: 50%;
+  --rb-sy: 50%;
+  --rb-so: 0;
+  --rb-tone: var(--rb-accent);
+  transition: background-color .3s ease;
+}
+.rb-spotlight.tone-yellow { --rb-tone: var(--rb-yellow); }
+.rb-spotlight.tone-coral  { --rb-tone: var(--rb-coral); }
+.rb-spotlight.is-lit { --rb-so: 1; }
+
+/* 行业表格行（卡片式布局）：整行描边光晕 + 轻微上浮 */
+.rb-spot-row {
+  transition: box-shadow .35s ease, transform .35s var(--rb-ease), background-color .3s ease;
+}
+.rb-spot-row.is-lit {
+  box-shadow: inset 0 0 0 1px rgba(var(--rb-accent), .38), 0 22px 50px -26px rgba(var(--rb-accent), .55);
+  transform: translateY(-3px);
+}
+
+/* 卡片顶部一条随鼠标移动的高光线 */
+.rb-spot-edge {
+  position: relative;
+}
+.rb-spot-edge > .rb-edge {
+  position: absolute;
+  left: 0; right: 0; top: -1px;
+  height: 1px;
+  pointer-events: none;
+  background: radial-gradient(160px 1px at var(--rb-sx) 0, rgba(var(--rb-tone), .95), transparent);
+  opacity: var(--rb-so);
+  transition: opacity .35s ease;
+}
+
+/* ---------- AnimatedContent：进入视口时上浮淡入 ---------- */
+.rb-reveal {
+  opacity: 0;
+  transform: translateY(26px);
+  filter: blur(4px);
+  transition:
+    opacity .8s var(--rb-ease),
+    transform .8s var(--rb-ease),
+    filter .8s var(--rb-ease);
+  transition-delay: calc(var(--rb-d, 0) * 70ms);
+}
+.rb-reveal.is-in {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* ---------- DecryptedText：英文编号解码 ---------- */
+.rb-decrypt { font-variant-numeric: tabular-nums; }
+.rb-decrypt .rb-scramble { color: rgba(var(--rb-accent), .55); }
+
+/* ---------- CountUp：数字滚动 ---------- */
+.rb-count { font-variant-numeric: tabular-nums; }
+
+/* ---------- ClickSpark：点击火花画布 ---------- */
+.rb-spark-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 99990;
+  pointer-events: none;
+}
+
+/* ---------- 无障碍：系统开启“减少动态效果”时全部关闭 ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rb-aurora, .rb-spark-layer { display: none !important; }
+  .rb-blur-run .rb-blur-char,
+  .rb-shiny,
+  .button.primary.rb-shine-btn::after { animation: none !important; }
+  .rb-shiny { -webkit-text-fill-color: currentColor; background: none; }
+  .rb-reveal { opacity: 1; transform: none; filter: none; transition: none; }
+  .rb-magnet { transform: none; }
+}
